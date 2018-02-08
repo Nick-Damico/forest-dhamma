@@ -19,3 +19,6 @@ hartridge = Monastery.create(name: 'Hartridge', address: 'United Kingdom', site_
 santacittarama = Monastery.create(name: 'Santacittarama', address: 'Italy', site_url: 'https://forestsangha.org/community/monasteries/santacittarama', img_url: 'https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDcvMDEvOHFrdDF5anAxX01DXzMxNi5qcGciXSxbInAiLCJ0aHVtYiIsIjQ5MHgyNTkjIl0sWyJwIiwiZW5jb2RlIiwianBnIiwiLXF1YWxpdHkgODUiXV0/b3829a19d8349aa8/MC_316.jpg')
 wat_nong_pah_pong = Monastery.create(name: 'Wat Nong Pah Pong', address: 'Thailand', site_url: 'https://forestsangha.org/community/monasteries/wat-nong-pah-pong', img_url: 'https://media-cdn.tripadvisor.com/media/photo-s/01/e7/d8/60/main-pagodas-at-wat-nong.jpg')
 wat_pah_nanachat = Monastery.create(name: 'Wat Nong Pah Pong', address: 'Ubon, Thailand', site_url: 'http://www.watpahnanachat.org/', img_url: 'http://sanitykeeper.com/wp-content/uploads/2017/04/Wat-Pah-Nanachat-aerial-view.jpg')
+
+# Teachers
+ajahn_karuṇadhammo = Teacher.create(name: 'Ajahn Karuṇadhammo', profile_img: 'http://www.abhayagiri.org/media/images/authors/Ajahn%20Karunadhammo-small.jpg', monastery: abhayagiri)
