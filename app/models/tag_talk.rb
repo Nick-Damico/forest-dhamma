@@ -1,0 +1,2 @@
+class TagTalk < ApplicationRecord
+end
