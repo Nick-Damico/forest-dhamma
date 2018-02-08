@@ -1,5 +1,5 @@
 class Talk < ApplicationRecord
   belongs_to :teacher
-  has_many :talk_tags
-  has_many :tags, through: :talk_tags
+  has_many :tag_talks
+  has_many :tags, through: :tag_talks
 end
