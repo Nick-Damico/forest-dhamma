@@ -1,8 +1,8 @@
 class Api::V1::MonasteriesController < ApiController
   before_action :set_monastery, only: [:show]
-  
+
   def index
-    render json: Monastery.all
+    render json: Monastery.all, status: 200
   end
 
   def show
