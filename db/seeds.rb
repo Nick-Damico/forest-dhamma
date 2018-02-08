@@ -8,6 +8,7 @@
 
 # Monasteries
 
+amaravati = Monastery.create(name: "Amaravati", address: "St Margarets, Hemel Hempstead HP1 3BZ, England", site_url: "https://www.amaravati.org", img_url: "https://cd1.amaravati.org/wp-content/uploads/2016/10/04/Amaravati_157-2.jpg")
 abhayagiri = Monastery.create(name: 'Abhayagiri', address: 'Redwood Valley, CA', site_url: 'http://www.abhayagiri.org/', img_url: 'https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDgvMjgvNm5kbjlteXA4Z19hYmhheWFnaXJpX3ZpZXdfLmpwZyJdLFsicCIsInRodW1iIiwiNDkweDI1OSMiXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4NSJdXQ/a609da901ccc36c1/abhayagiri%20view%20.jpg')
 aruna = Monastery.create(name: 'Aruna Ratanagiri', address: 'Belsay Northumberland, UK', site_url: 'https://ratanagiri.org.uk/', img_url: 'https://upload.wikimedia.org/wikipedia/en/f/f2/Dhamma_Hall.jpg')
 bodhinyanarama = Monastery.create(name: 'Bodhinyanarama', address: 'Wellington, New Zealand', site_url: 'http://www.bodhinyanarama.net.nz/', img_url: 'https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDgvMTIvM3NhamkyazFpM19OWl9XZWxsaW5ndG9uX1N0dXBhLmpwZyJdLFsicCIsInRodW1iIiwiNDkweDI1OSMiXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4NSJdXQ/a5b7484e133a8e4d/NZ_Wellington_Stupa.jpg')
@@ -31,6 +32,24 @@ ajahn_karuṇadhammo = Teacher.create(name: 'Ajahn Karuṇadhammo', profile_img:
 ajahn_passano = Teacher.create(name: 'Ajahn Pasanno', profile_img: 'http://www.abhayagiri.org/media/images/authors/Ajahn%20Pasanno-small.JPG', monastery: abhayagiri)
 ajahn_naniko = Teacher.create(name: 'Ajahn Ñāniko', profile_img: 'http://www.abhayagiri.org/media/images/authors/Ajahn%20Nyaniko-small.JPG', monastery: abhayagiri)
 
+############################
+# Amaravati Teachers
+############################
+ajahn_sumedho = Teacher.create(name: 'Ajahn Sumedho', profile_img: 'http://www.bia.or.th/en/images/photo/Ajahn-Sumedho.jpg', monastery: amaravati)
+ajahn_candasiri = Teacher.create(name: 'Ajahn Candasiri', profile_img: 'https://cdn.amaravati.org/wp-content/uploads/2014/06/candasiri_bio2.jpg', monastery: amaravati)
+
+############################
+# Aruna Ratanagiri Teachers
+############################
+ajahn_munindo = Teacher.create(name: 'Ajahn Munindo', profile_img: 'http://www.bia.or.th/en/images/photo/Ajahn-Sumedho.jpg', monastery: aruna)
+
+
+############################
+# Forest Hermitage Teachers
+############################
+luang_por_khemadhammo = Teacher.create(name: 'Luang Por Khemadhammo', profile_img: 'https://pbs.twimg.com/profile_images/1673555382/CIMG4997A.jpg', monastery: forest_hermitage)
+
+
 ####################################################
 # Tags
 ####################################################
@@ -40,13 +59,19 @@ forest_tradition = Tag.create(name: 'Thai Forest Tradition')
 patience = Tag.create(name: 'Patience')
 determination = Tag.create(name: 'Determination')
 spiritual_friendship = Tag.create(name: 'Spiritual Friendship')
-
+practicing_dhamma = Tag.create(name: 'Practicing Dhamma')
+faith = Tag.create(name: 'Faith')
+trust = Tag.create(name: 'Trust')
+tradition = Tag.create(name: 'Tradition')
+understanding = Tag.create(name: 'Understanding')
+four_noble_truths = Tag.create(name: 'Four Noble Truths')
+autobiography = Tag.create(name: 'Autobiography')
 ####################################################
 # Talks
 ####################################################
 
 
-# Seed for only 4 - 6 Monasteries 
+# Seed for only 4 - 6 Monasteries
 ############################
 # Abhayagiri Talks
 ############################
@@ -67,3 +92,42 @@ returning_abhayagiri = Talk.create(title: 'Returning to Abhayagiri', description
 returning_abhayagiri.tags << patience
 returning_abhayagiri.tags << spiritual_friendship
 returning_abhayagiri.save
+
+############################
+# Amaravati Talks
+############################
+duty_of_living = Talk.create(title: 'The Duty of Living', description: 'This talk was given on 1 June 2011 at Amaravati Buddhist Monastery.', language: 'English', file_url: 'https://cdn.amaravati.org/wp-content/uploads/2014/10/11/Amaravati-2011-49-The-Duty-of-Living.mp3', teacher: ajahn_candasiri)
+
+practising_dhamma =  Talk.create(title: 'Listening and Practising the Dhamma', description: 'This talk was given by Luang Por Sumedho on 18 May 2014, on Vesakha Puja day, at Amaravati Buddhist Monastery, UK.', language: 'English', file_url: 'https://cdn.amaravati.org/wp-content/uploads/2014/10/11/Amaravati_2014_0518_Listening_and_Practising_the_Dhamma.mp3', teacher: ajahn_sumedho)
+practising_dhamma.tags << practicing_dhamma
+practising_dhamma.save
+
+
+############################
+# Aruna Talks
+############################
+
+trust_distrust = Talk.create(title: 'Trust and Distrust', description: 'Talk on dealing with trust and distrust in our faith, by Luang Por Munindo on February 04, 2018', language: 'English', file_url: 'https://ratanagiri.org.uk/system/refinery/resources/2018/02/05/2tw1bkw1eu_Ajahn_Munindo_Trust_and_Distrust.mp3', teacher: ajahn_munindo)
+trust_distrust.tags << faith
+trust_distrust.tags << trust
+trust_distrust.save
+
+let_this_be_enough = Talk.create(title: 'Let this be enough', description: 'Talk on contentment, by Luang Por Munindo on December 31, 2017', language: 'English', file_url: 'https://ratanagiri.org.uk/system/refinery/resources/2018/01/01/9cli1yl9mc_Ajahn_Munindo_Let_THIS_Be_Enough.mp3', teacher: ajahn_munindo)
+let_this_be_enough.tags << understanding
+let_this_be_enough.tags << tradition
+let_this_be_enough.save
+
+
+############################
+# Forest Hermitage Talks
+############################
+
+fh_four_noble_truths = Talk.create(title: 'The Four Noble Truths', description: 'Talk on the Four Noble Truths, by Luang Por Khemadhammo on Januaray 04, 2010', language: 'English', file_url: 'https://foresthermitage.org.uk/wp-content/uploads/2009/12/LP-Interview-Part-1', teacher: luang_por_khemadhammo)
+fh_four_noble_truths.tags << four_noble_truths
+fh_four_noble_truths.tags << trust
+fh_four_noble_truths.save
+
+life_story = Talk.create(title: 'Luang Por Khemadhammo\'s life story part: 1', description: 'The life of Luang Por Khemadhammo part: 1, by Luang Por Khemadhammo on December 01, 2009', language: 'English', file_url: 'https://foresthermitage.org.uk/wp-content/uploads/2009/12/LP-Interview-Part-1', teacher: luang_por_khemadhammo)
+life_story.tags << autobiography
+life_story.tags << faith
+life_story.save
