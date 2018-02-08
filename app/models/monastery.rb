@@ -1,0 +1,2 @@
+class Monastery < ApplicationRecord
+end
