@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208143247) do
+ActiveRecord::Schema.define(version: 20180208143715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20180208143247) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_talks", force: :cascade do |t|
+    t.bigint "talk_id"
+    t.bigint "tag_id"
+    t.index ["tag_id"], name: "index_tag_talks_on_tag_id"
+    t.index ["talk_id"], name: "index_tag_talks_on_talk_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -51,6 +58,8 @@ ActiveRecord::Schema.define(version: 20180208143247) do
     t.index ["monastery_id"], name: "index_teachers_on_monastery_id"
   end
 
+  add_foreign_key "tag_talks", "tags"
+  add_foreign_key "tag_talks", "talks"
   add_foreign_key "talks", "teachers"
   add_foreign_key "teachers", "monasteries"
 end
