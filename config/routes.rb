@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :monasteries, only: [:index, :show]
       resources :teachers
+      resources :talks
     end
   end
 
