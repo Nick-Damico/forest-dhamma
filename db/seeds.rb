@@ -70,8 +70,8 @@ hartridge = Monastery.create(
 
 santacittarama = Monastery.create(
   name: 'Santacittarama',
-  address: 'Italy', s
-  ite_url: 'https://forestsangha.org/community/monasteries/santacittarama',
+  address: 'Italy',
+  site_url: 'https://forestsangha.org/community/monasteries/santacittarama',
   img_url: 'https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDcvMDEvOHFrdDF5anAxX01DXzMxNi5qcGciXSxbInAiLCJ0aHVtYiIsIjQ5MHgyNTkjIl0sWyJwIiwiZW5jb2RlIiwianBnIiwiLXF1YWxpdHkgODUiXV0/b3829a19d8349aa8/MC_316.jpg'
 )
 
