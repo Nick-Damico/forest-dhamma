@@ -13,14 +13,22 @@ class MonasteryList extends Component {
   componentDidMount = () => {
     fetch('http://localhost:3001/api/v1/monasteries')
     .then(response => response.json())
-    .then(monasteries => this.setState({ monasteries }))
+    .then(json => this.setState({ monasteries: json.monasteries }))
   }
 
   render() {
-    console.log(this.state.monasteries)
+      const monasteries = this.state.monasteries.map((monastery, index) => {
+        return (
+          <MonasteryItem
+            key={monastery + index}
+            monastery={monastery}
+          />
+        )
+      })
     return(
       <div>
         MonasteryList Page
+        {monasteries}
       </div>
     )
   }
