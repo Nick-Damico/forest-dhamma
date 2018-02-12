@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
     "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.78.2"
   },
   "scripts": {
