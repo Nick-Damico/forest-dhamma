@@ -1,10 +1,9 @@
-function MonasteriesReducer(state = {
-  loading: false,
-  monasteries: [],
-},action) {
-  switch(action.type) {
+function MonasteriesReducer(state = {loading: false, monasteries: []}, action) {
+  switch( action.type ) {
     case 'FETCH_MONASTERIES':
-      return { loading: false, monasteries: action.payload };
+      return Object.assign({}, state, {loading: true});
+    case 'RECEIVED_MONASTERIES':
+      return {loading: false, monasteries: action.payload}
     default:
       return state;
   }
