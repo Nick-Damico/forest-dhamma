@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchMonasteries, fetchMonastery } from '../actions/index';
 import MonasteryItem from '../components/monastery-item';
 
 class MonasteryList extends Component {
@@ -11,27 +14,35 @@ class MonasteryList extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3001/api/v1/monasteries')
-    .then(response => response.json())
-    .then(json => this.setState({ monasteries: json.monasteries }))
+    this.props.fetchMonasteries()
   }
 
   render() {
-      const monasteries = this.state.monasteries.map((monastery, index) => {
-        return (
-          <MonasteryItem
-            key={monastery + index}
-            monastery={monastery}
-          />
-        )
-      })
+      // const monasteries = this.props.monasteries.map((monastery, index) => {
+      //   return (
+      //     <MonasteryItem
+      //       key={monastery + index}
+      //       monastery={monastery}
+      //     />
+      //   )
+      // })
     return(
       <div>
         MonasteryList Page
-        {monasteries}
+        {/* {monasteries} */}
       </div>
     )
   }
 }
 
-export default MonasteryList;
+function mapStateToProps(state) {
+  return {
+    monasteries: state.monasteries
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchMonasteries }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MonasteryList);
