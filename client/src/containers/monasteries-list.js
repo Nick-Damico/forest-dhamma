@@ -5,11 +5,11 @@ import { fetchMonasteries, fetchMonastery } from '../actions/index';
 import MonasteryItem from '../components/monastery-item';
 
 class MonasteryList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      monasteries: [],
+      selectedMonastery: null,
     }
   }
 
@@ -17,19 +17,28 @@ class MonasteryList extends Component {
     this.props.fetchMonasteries()
   }
 
+  onHandleClick = (selectedMonastery) => {
+    console.log(selectedMonastery);
+  }
+
   render() {
-      // const monasteries = this.props.monasteries.map((monastery, index) => {
-      //   return (
-      //     <MonasteryItem
-      //       key={monastery + index}
-      //       monastery={monastery}
-      //     />
-      //   )
-      // })
+    const { monasteries } = this.props;
+    let monasteryItems;
+    if (monasteries) {
+      monasteryItems = monasteries.map((monastery, index) => {
+        return (
+          <MonasteryItem
+            key={index}
+            monastery={monastery}
+            onMonasteryClick={selectedMonastery => this.onHandleClick(selectedMonastery)}
+          />
+        )
+      })
+    }
     return(
       <div>
         MonasteryList Page
-        {/* {monasteries} */}
+        {monasteryItems}
       </div>
     )
   }
@@ -37,12 +46,12 @@ class MonasteryList extends Component {
 
 function mapStateToProps(state) {
   return {
-    monasteries: state.monasteries
+    monasteries: state.monasteryState.monasteries
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMonasteries }, dispatch);
+  return bindActionCreators({ fetchMonasteries, fetchMonastery }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MonasteryList);
