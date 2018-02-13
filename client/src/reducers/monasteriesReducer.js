@@ -3,7 +3,7 @@ import {
   FETCH_MONASTERIES,
   FETCH_MONASTERY,
   RECEIVED_MONASTERY
-}  from '../actions/index';
+}  from '../actions/monasteryActions';
 
 function MonasteriesReducer(state = {
   loading: false,
