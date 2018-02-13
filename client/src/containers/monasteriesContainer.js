@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchMonasteries, fetchMonastery } from '../actions/index';
-import MonasteryItem from '../components/monastery-item';
+import { fetchMonasteries, fetchMonastery } from '../actions/monasteryActions';
+import MonasteryItem from '../components/monasteryItem';
 
 class MonasteryContainer extends Component {
   componentDidMount = () => {
