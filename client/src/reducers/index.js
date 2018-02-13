@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import MonasteriesReducer from './monasteries_reducer';
+import MonasteriesReducer from './monasteriesReducer';
 
 const RootReducer = combineReducers({
   monasteryState: MonasteriesReducer,
