@@ -3,11 +3,7 @@ import {
   FETCH_MONASTERIES
 }  from '../actions/monasteryActions';
 
-function MonasteriesReducer(state = {
-  loading: false,
-  monasteries: [],
-  selectedMonastery: null
-}, action) {
+function MonasteriesReducer(state = [], action) {
   switch( action.type ) {
     case FETCH_MONASTERIES:
       return Object.assign({}, state, {loading: true});

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import MonasteriesReducer from './monasteriesReducer';
 
 const RootReducer = combineReducers({
-  monasteryState: MonasteriesReducer,
+  monasteries: MonasteriesReducer,
 })
 
 export default RootReducer;

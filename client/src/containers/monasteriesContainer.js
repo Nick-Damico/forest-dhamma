@@ -37,7 +37,7 @@ class MonasteryContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    monasteries: state.monasteryState.monasteries
+    monasteries: state.monasteries
   }
 }
 
