@@ -1,8 +1,6 @@
 import {
   RECEIVED_MONASTERIES,
-  FETCH_MONASTERIES,
-  FETCH_MONASTERY,
-  RECEIVED_MONASTERY
+  FETCH_MONASTERIES
 }  from '../actions/monasteryActions';
 
 function MonasteriesReducer(state = {
@@ -15,10 +13,6 @@ function MonasteriesReducer(state = {
       return Object.assign({}, state, {loading: true});
     case RECEIVED_MONASTERIES:
       return {loading: false, monasteries: action.payload}
-    case FETCH_MONASTERY:
-      return Object.assign({}, state, {loading: true});
-      case RECEIVED_MONASTERY:
-      return Object.assign({}, state, {loading: false, selectedMonastery: action.payload})
     default:
       return state;
   }
