@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { fetchMonastery } from '../actions/monasteryActions';
 
 
 class TeachersContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchMonastery(this.props.match)
+  }
 
   render() {
-    const { selectedMonastery } = this.props;
-    let content = selectedMonastery ? <h1>{selectedMonastery.name}</h1> : <h1>hello</h1>;
-    return content
+    return <h1>Teachers of monastery</h1>
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({},dispatch)
+  return bindActionCreators({ fetchMonastery }, dispatch)
 }
 
 function mapStateToProps(state) {

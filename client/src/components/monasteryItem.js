@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MonasteryItem = ({ monastery, onMonasteryClick }) => {
   const { name, talks } = monastery;
@@ -6,7 +7,7 @@ const MonasteryItem = ({ monastery, onMonasteryClick }) => {
     <div>
       <h3>{name}</h3>
       <p>{talks.length} Talks</p>
-      <a onClick={() => onMonasteryClick(monastery)}>+</a>
+      <Link to={`/monasteries/${monastery.id}`}>Click</Link> 
     </div>
   )
 }

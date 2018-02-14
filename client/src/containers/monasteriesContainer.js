@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchMonasteries, fetchMonastery } from '../actions/monasteryActions';
+import { fetchMonasteries } from '../actions/monasteryActions';
 import MonasteryItem from '../components/monasteryItem';
 
 class MonasteryContainer extends Component {
@@ -9,9 +9,6 @@ class MonasteryContainer extends Component {
     this.props.fetchMonasteries();
   }
 
-  onHandleClick = (selectedMonastery) => {
-    this.props.fetchMonastery(selectedMonastery);
-  }
   componentDidUpdate() {
     console.log('render');
   }
@@ -25,7 +22,6 @@ class MonasteryContainer extends Component {
           <MonasteryItem
             key={index}
             monastery={monastery}
-            onMonasteryClick={selectedMonastery => this.onHandleClick(selectedMonastery)}
           />
         )
       })
@@ -46,7 +42,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMonasteries, fetchMonastery }, dispatch);
+  return bindActionCreators({ fetchMonasteries }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MonasteryContainer);
