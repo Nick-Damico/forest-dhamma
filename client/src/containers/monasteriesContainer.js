@@ -9,15 +9,12 @@ class MonasteryContainer extends Component {
     this.props.fetchMonasteries();
   }
 
-  componentDidUpdate() {
-    console.log('render');
-  }
-
   render() {
     const { monasteries } = this.props;
     let monasteryItems;
-    if (monasteries) {
-      monasteryItems = monasteries.map((monastery, index) => {
+    if (monasteries.length !== 0) {
+      debugger;
+      monasteryItems = monasteries[0].map((monastery, index) => {
         return (
           <MonasteryItem
             key={index}
