@@ -6,9 +6,9 @@ import {
 function MonasteriesReducer(state = [], action) {
   switch( action.type ) {
     case FETCH_MONASTERIES:
-      return Object.assign({}, state, {loading: true});
+      return [...state];
     case RECEIVED_MONASTERIES:
-      return {loading: false, monasteries: action.payload}
+      return [...state, action.payload];
     default:
       return state;
   }
