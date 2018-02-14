@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchMonastery } from '../actions/monasteryActions';
+import { fetchTeachers } from '../actions/teacherActions';
+import TeachersHeader from '../'
 
 
 class TeachersContainer extends Component {
@@ -10,7 +11,7 @@ class TeachersContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchMonastery(this.props.match)
+    this.props.fetchTeachers(this.props.match)
   }
 
   render() {
@@ -19,7 +20,7 @@ class TeachersContainer extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMonastery }, dispatch)
+  return bindActionCreators({ fetchTeachers }, dispatch)
 }
 
 function mapStateToProps(state) {
