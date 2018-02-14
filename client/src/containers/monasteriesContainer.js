@@ -13,7 +13,6 @@ class MonasteryContainer extends Component {
     const { monasteries } = this.props;
     let monasteryItems;
     if (monasteries.length !== 0) {
-      debugger;
       monasteryItems = monasteries[0].map((monastery, index) => {
         return (
           <MonasteryItem
