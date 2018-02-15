@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180208143715) do
     t.string "duration"
     t.string "language"
     t.string "file_url"
+    t.integer "favorites"
     t.bigint "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -6,6 +6,7 @@ class CreateTalks < ActiveRecord::Migration[5.1]
       t.string :duration
       t.string :language
       t.string :file_url
+      t.integer :favorites
       t.references :teacher, foreign_key: true
 
       t.timestamps

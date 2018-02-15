@@ -180,7 +180,8 @@ going_beneath = Talk.create(
   description: 'Ajahn Karunadhammo discusses instructions on how to remove unwholesome, distracting or proliferating thoughts. He focuses on the fourth method which retraces the thought back to its origin. He suggests moving to the affective experience that is feeding the thought or story, and then to see the bare energetic experience in the body.',
   language: 'English',
   file_url: 'http://www.abhayagiri.org/media/audio/youtube/P8l6jgpnxxY.mp3',
-  teacher: ajahn_karuṇadhammo
+  teacher: ajahn_karuṇadhammo,
+  favorites: 11
 )
 going_beneath.tags << suffering
 going_beneath.tags << right_effort
@@ -191,7 +192,8 @@ connect_lineage =  Talk.create(
   description: 'Ajahn Pasanno describes the recent visit to Thailand by members of the community to attend the celebration of the one hundredth year of Ajahn Chah’s birth.',
   language: 'English',
   file_url: 'http://www.abhayagiri.org/media/audio/youtube/3oi13Xeqeq8.mp3',
-  teacher: ajahn_passano
+  teacher: ajahn_passano,
+  favorites: 5
 )
 connect_lineage.tags << forest_tradition
 connect_lineage.save
@@ -201,7 +203,8 @@ going_against_stream = Talk.create(
   description: ' He discusses the five hindrances to meditation and their antidotes which are the four protective meditations: contemplation of the body, metta, death, and the Buddha.',
   language: 'English',
   file_url: 'http://www.abhayagiri.org/media/audio/youtube/7zXgHV9WOfM.mp3',
-  teacher: ajahn_naniko
+  teacher: ajahn_naniko,
+  favorites: 10
 )
 going_against_stream.tags << suffering
 going_against_stream.save
@@ -211,7 +214,8 @@ returning_abhayagiri = Talk.create(
   description: 'Returning from his time in Thailand, Ajahn Naniko offers reflections on overcoming negativity, meditating in India, uncertainty, and spiritual friendship.',
   language: 'English',
   file_url: 'http://www.abhayagiri.org/media/audio/youtube/gDRjNwmhgDU.mp3',
-  teacher: ajahn_naniko
+  teacher: ajahn_naniko,
+  favorites: 2
 )
 returning_abhayagiri.tags << patience
 returning_abhayagiri.tags << spiritual_friendship
@@ -226,7 +230,8 @@ duty_of_living = Talk.create(
   description: 'This talk was given on 1 June 2011 at Amaravati Buddhist Monastery.',
   language: 'English',
   file_url: 'https://cdn.amaravati.org/wp-content/uploads/2014/10/11/Amaravati-2011-49-The-Duty-of-Living.mp3',
-  teacher: ajahn_candasiri
+  teacher: ajahn_candasiri,
+  favorites: 2
 )
 
 practising_dhamma =  Talk.create(
@@ -234,7 +239,8 @@ practising_dhamma =  Talk.create(
   description: 'This talk was given by Luang Por Sumedho on 18 May 2014, on Vesakha Puja day, at Amaravati Buddhist Monastery, UK.',
   language: 'English',
   file_url: 'https://cdn.amaravati.org/wp-content/uploads/2014/10/11/Amaravati_2014_0518_Listening_and_Practising_the_Dhamma.mp3',
-  teacher: ajahn_sumedho
+  teacher: ajahn_sumedho,
+  favorites: 5
 )
 practising_dhamma.tags << practicing_dhamma
 practising_dhamma.save
@@ -248,7 +254,8 @@ trust_distrust = Talk.create(
   title: 'Trust and Distrust',
   description: 'Talk on dealing with trust and distrust in our faith, by Luang Por Munindo on February 04, 2018',
   language: 'English', file_url: 'https://ratanagiri.org.uk/system/refinery/resources/2018/02/05/2tw1bkw1eu_Ajahn_Munindo_Trust_and_Distrust.mp3',
-  teacher: ajahn_munindo
+  teacher: ajahn_munindo,
+  favorites: 10
 )
 trust_distrust.tags << faith
 trust_distrust.tags << trust
@@ -259,7 +266,8 @@ let_this_be_enough = Talk.create(
   description: 'Talk on contentment, by Luang Por Munindo on December 31, 2017',
   language: 'English',
   file_url: 'https://ratanagiri.org.uk/system/refinery/resources/2018/01/01/9cli1yl9mc_Ajahn_Munindo_Let_THIS_Be_Enough.mp3',
-  teacher: ajahn_munindo
+  teacher: ajahn_munindo,
+  favorites: 2
 )
 let_this_be_enough.tags << understanding
 let_this_be_enough.tags << tradition
@@ -275,7 +283,8 @@ fh_four_noble_truths = Talk.create(
   description: 'Talk on the Four Noble Truths, by Luang Por Khemadhammo on Januaray 04, 2010',
   language: 'English',
   file_url: 'https://foresthermitage.org.uk/wp-content/uploads/2009/12/LP-Interview-Part-1.mp3',
-  teacher: luang_por_khemadhammo
+  teacher: luang_por_khemadhammo,
+  favorites: 3
 )
 fh_four_noble_truths.tags << four_noble_truths
 fh_four_noble_truths.tags << trust
@@ -286,7 +295,8 @@ life_story = Talk.create(
   description: 'The life of Luang Por Khemadhammo part: 1, by Luang Por Khemadhammo on December 01, 2009',
   language: 'English',
   file_url: 'https://foresthermitage.org.uk/wp-content/uploads/2009/12/LP-Interview-Part-1.mp3',
-  teacher: luang_por_khemadhammo
+  teacher: luang_por_khemadhammo,
+  favorites: 8
 )
 life_story.tags << autobiography
 life_story.tags << faith
