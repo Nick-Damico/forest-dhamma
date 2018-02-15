@@ -10,7 +10,7 @@ export function fetchTeachers({ url }) {
   return (dispatch) => {
     dispatch({ type: FETCH_TEACHERS });
     fetch(`${ROOT_URL}${url}`)
-      .then(response => return response.json())
+      .then(response => response.json())
       .then(json => {
         dispatch({ type:RECEIVED_TEACHERS, payload: json.monastery })
       })
