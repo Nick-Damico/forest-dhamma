@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import MonasteriesReducer from './monasteriesReducer';
 import TeachersReducer from './teachersReducer';
-import TalksReducer from './TalksReducer';
+import SelectedTeacherReducer from './selectedTeacherReducer';
 
 const RootReducer = combineReducers({
   monasteries: MonasteriesReducer,
   teachers: TeachersReducer,
-  talks: TalksReducer,
+  selectedTeacher: SelectedTeacherReducer,
 })
 
 export default RootReducer;
