@@ -3,22 +3,34 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSelectedTeacher } from '../actions/selectedTeacherActions';
 import TalksHeader from '../components/talks/talksHeader';
+import TalksPlaylist from '../components/talks/talksPlaylist';
+import AudioPlayer from '../components/talks/audioPlayer';
 
 class TalkAudioPlayerContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentTalk: null,
+    }
+  }
+
   componentDidMount = () => {
       this.props.fetchSelectedTeacher( this.props.match );
   }
 
   render() {
     const { loading, teacher } = this.props;
-
     if ( loading ) {
       return <h2>Loading...</h2>;
     }
     const { monastery, talks } = teacher;
-
     return (
-      <TalksHeader monastery={ monastery } teacher={ teacher } />
+      <div>
+        <TalksHeader monastery={ monastery } teacher={ teacher } />
+        <AudioPlayer talk={talks[0]} teacher={ teacher } />
+        <TalksPlaylist talks={ talks } teacher={ teacher }/>
+      </div>
     )
   }
 }
