@@ -6,9 +6,14 @@ import {
 function TalksReducer(state = {}, action) {
   switch (action.type) {
     case FETCH_SELECTED_TEACHER:
-      return state;
+      return {
+        loading: true,
+      }
     case RECEIVED_SELECTED_TEACHER:
-        return action.payload
+        return {
+          loading: false,
+          teacher: action.payload
+        }
     default:
       return state;
   }
