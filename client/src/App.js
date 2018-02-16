@@ -4,15 +4,19 @@ import './App.css';
 import Home from './components/home';
 import MonasteryList from './containers/monasteriesContainer';
 import TeachersContainer from './containers/teachersContainer';
+import TalkAudioPlayerContainer from './containers/talkAudioPlayerContainer';
+import UploadTalkContainer from './containers/uploadTalkContainer';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="app">
-          <Route exact path="/" render={Home} />
-          <Route exact path="/monasteries" component={MonasteryList} />
-          <Route exact path="/monasteries/:monasteryId" component={TeachersContainer} />
+          <Route exact path="/" render={ Home } />
+          <Route exact path="/monasteries" component={ MonasteryList } />
+          <Route exact path="/monasteries/:monasteryId" component={ TeachersContainer } />
+          <Route exact path="/teachers/:teacherId" component={ TalkAudioPlayerContainer } />
+          <Route exact path="/talks/upload" component={ UploadTalkContainer } />
         </div>
       </Router>
     );
