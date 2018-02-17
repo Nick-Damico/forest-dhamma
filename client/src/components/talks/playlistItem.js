@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { styles } from '../teachers/teacherItem';
 
-const playlistItem = ({ teacher, talk }) => {
+const playlistItem = ({ teacher, talk, onHandleClick }) => {
   const { name, profile_img } = teacher;
   const { title, favorites, created_at } = talk;
   const { imgStyle, teacherList, itemDetails } = styles;
@@ -12,6 +12,7 @@ const playlistItem = ({ teacher, talk }) => {
       <div className="teacherList-item--details" style={ itemDetails }>
         <h4>{ title }</h4>
         <span>{ moment(created_at).format("MMM Do YYYY") } { `${favorites} favorites` }</span>
+        <button onClick={() => onHandleClick(talk)}>Play</button>
       </div>
     </div>
   )
