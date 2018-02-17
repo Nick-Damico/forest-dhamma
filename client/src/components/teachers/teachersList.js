@@ -1,8 +1,16 @@
 import React from 'react';
 import TeacherItem from './teacherItem';
 
-const TeachersList = ({ teachers }) => {
-  let teacherItems = teachers.map((teacher,index) => <TeacherItem key={index} teacher={teacher} /> )
+const TeachersList = ({ teachers, onHandleClick }) => {
+  const teacherItems = teachers.map((teacher,index) => {
+    return (
+       <TeacherItem
+         onHandleClick={onHandleClick}
+         key={index}
+         teacher={teacher}
+       />
+     )
+  });
   return (
     <div className="teachersContainer">
       {teacherItems}
