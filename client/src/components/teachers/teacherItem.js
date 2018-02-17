@@ -24,7 +24,7 @@ const TeacherItem = (props) => {
       <div className="teacherList-item--details" style={ itemDetails }>
         <h4>{ name }</h4>
         <p>{ talks.length } Dhamma Talk{talks.length > 1 ? 's' : null}</p>
-        <Link to={`/teachers/${id}`}>talks</Link>
+        <Link onClick={() => props.onHandleClick(null)} to={`/teachers/${id}`}>talks</Link>
       </div>
     </div>
   )
