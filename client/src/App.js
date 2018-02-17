@@ -8,6 +8,7 @@ import TalkAudioPlayerContainer from './containers/talkAudioPlayerContainer';
 import UploadTalkContainer from './containers/uploadTalkContainer';
 
 class App extends Component {
+
   render() {
     return (
       <Router>
