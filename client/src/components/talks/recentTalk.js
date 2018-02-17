@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { styles } from '../teachers/teacherItem';
 
-const RecentTalk = ({ talk }) => {
+const RecentTalk = ({ talk, onHandleClick }) => {
   const { title, created_at, teacher } = talk;
   const { name, profile_img, id } = teacher[0];
   const { imgStyle, teacherList, itemDetails } = styles;
@@ -15,7 +15,7 @@ const RecentTalk = ({ talk }) => {
           <div className="teacherList-item--details" style={ itemDetails }>
             <h4>{ title }</h4>
             <span>{ name } - { moment(created_at).format("MMM Do YYYY") }</span>
-            <Link to={`/teachers/${id}`}>talks</Link>
+            <Link onClick={() => onHandleClick(talk)} to={`/teachers/${id}`}>talks</Link>
           </div>
         </div>
     </div>
