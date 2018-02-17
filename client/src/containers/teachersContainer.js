@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchTeachers } from '../actions/teacherActions';
+import { addSelectedTalk, removeSelectedTalk } from '../actions/selectedTalkActions';
 import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/talks/recentTalk';
@@ -10,7 +11,11 @@ import FavoriteTalk from '../components/talks/favoriteTalk';
 
 class TeachersContainer extends Component {
   componentDidMount() {
-    this.props.fetchTeachers(this.props.match)
+    this.props.fetchTeachers(this.props.match);
+  }
+
+  onHandleClick = (talk) => {
+    talk ? this.props.addSelectedTalk(talk) : this.props.removeSelectedTalk();
   }
 
   render() {
@@ -21,7 +26,7 @@ class TeachersContainer extends Component {
     const monastery = teachers ? teachers[teachers.length - 1] : null;
     if ( teachers[0] ) {
       if ( teachers[0].length >= 1) {
-      teacherList = <TeachersList teachers={teachers[0]} />
+      teacherList = <TeachersList onHandleClick={this.onHandleClick} teachers={teachers[0]} />
       // store most recent talk ? remove this step by fetch request for talks from server?
       let talks = [].concat(...teachers[0].map(teacher => teacher.talks));
       recentTalk = talks.sort((a,b) => {
@@ -47,8 +52,8 @@ class TeachersContainer extends Component {
             <div>
               <TeachersHeader monastery={monastery} />
               { teacherList }
-              <RecentTalk talk={recentTalk}/>
-              <FavoriteTalk talk={favoriteTalk}/>
+              <RecentTalk onHandleClick={this.onHandleClick} talk={recentTalk}/>
+              <FavoriteTalk onHandleClick={this.onHandleClick} talk={favoriteTalk}/>
             </div>
           }
 
@@ -58,7 +63,7 @@ class TeachersContainer extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchTeachers }, dispatch)
+  return bindActionCreators({ fetchTeachers, addSelectedTalk, removeSelectedTalk }, dispatch)
 }
 
 function mapStateToProps(state) {
