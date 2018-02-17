@@ -2,7 +2,7 @@ import React from 'react';
 import { styles } from '../teachers/teacherItem';
 import { Link } from 'react-router-dom';
 
-const FavoriteTalk = ({ talk }) => {
+const FavoriteTalk = ({ talk, onHandleClick }) => {
   const { title, favorites, teacher } = talk;
   const { name, profile_img, id } = teacher[0];
   const { imgStyle, teacherList, itemDetails } = styles;
@@ -14,7 +14,7 @@ const FavoriteTalk = ({ talk }) => {
           <div className="teacherList-item--details" style={ itemDetails }>
             <h4>{ title }</h4>
             <span>{ name } - { favorites }</span>
-            <Link to={`/teachers/${id}`}>talks</Link>
+            <Link onClick={() => onHandleClick(talk)} to={`/teachers/${id}`}>talks</Link>
           </div>
         </div>
     </div>
