@@ -4,6 +4,9 @@ import { bindActionCreators } from 'redux';
 import { fetchSelectedTeacher } from '../actions/selectedTeacherActions';
 import TalksHeader from '../components/talks/talksHeader';
 import TalksPlaylist from '../components/talks/talksPlaylist';
+import TalkDescription from '../components/talks/talkDescription';
+import PlaylistNavbar from '../components/talks/playlistNavbar';
+import TalkTags from '../components/talks/talkTags';
 import AudioPlayer from '../components/talks/audioPlayer';
 
 class TalkAudioPlayerContainer extends Component {
@@ -12,11 +15,27 @@ class TalkAudioPlayerContainer extends Component {
 
     this.state = {
       currentTalk: null,
+      showPlaylist: true,
+      showDescription: false,
     }
   }
 
   componentDidMount = () => {
       this.props.fetchSelectedTeacher( this.props.match );
+  }
+
+  onHandleClick = (talk) => {
+    this.setState({
+      currentTalk: talk,
+    })
+  }
+
+  showComponentChange = (type) => {
+    if ( type === 'talks' ) {
+      this.setState({ showPlaylist: true, showDescription: false })
+    } else {
+      this.setState({ showPlaylist: false, showDescription: true })
+    }
   }
 
   render() {
@@ -28,8 +47,11 @@ class TalkAudioPlayerContainer extends Component {
     return (
       <div>
         <TalksHeader monastery={ monastery } teacher={ teacher } />
-        <AudioPlayer talk={talks[0]} teacher={ teacher } />
-        <TalksPlaylist talks={ talks } teacher={ teacher }/>
+        <AudioPlayer talk={ this.state.currentTalk || this.props.selectedTalk || talks[0] } teacher={ teacher } />
+        <PlaylistNavbar onHandleClick={this.showComponentChange} />
+        { this.state.showPlaylist ? <TalksPlaylist talks={ talks } teacher={ teacher } onHandleClick={this.onHandleClick} /> : null }
+        { this.state.showDescription ? <TalkDescription talk={ this.state.currentTalk || this.props.selectedTalk || talks[0] } /> : null }
+        { this.state.showTags ? <TalkTags /> : null }
       </div>
     )
   }
@@ -40,7 +62,8 @@ TalkAudioPlayerContainer.defaultProps = { loading: true, teacher: '' };
 function mapStateToProps(state) {
   return {
     teacher: state.selectedTeacher.teacher,
-    loading: state.selectedTeacher.loading
+    loading: state.selectedTeacher.loading,
+    selectedTalk: state.selectedTalk,
    }
 }
 
