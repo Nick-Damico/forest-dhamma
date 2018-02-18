@@ -9,7 +9,7 @@ class AudioPlayer extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.talk !== this.props.talk
+    return nextProps.talk.file_url !== this.props.talk.file_url
   }
 
   render() {
@@ -18,7 +18,7 @@ class AudioPlayer extends Component {
     return (
       <div>
         <PlayerHeader title={ title } teacher={ teacher }  />
-        <audio id="audioPlayer" controls ref="audio" ref={(audio) => { this.player = audio; }}>
+        <audio id="audioPlayer" controls ref={(audio) => { this.player = audio; }}>
           <source src={ file_url } type="audio/mpeg" />
           Your Browser does not support the audio element
         </audio>
