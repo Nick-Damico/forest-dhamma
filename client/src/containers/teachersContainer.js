@@ -15,7 +15,7 @@ class TeachersContainer extends Component {
   }
 
   onHandleClick = (talk) => {
-    talk ? this.props.addSelectedTalk(talk) : this.props.removeSelectedTalk();
+    this.props.addSelectedTalk(talk);
   }
 
   render() {
