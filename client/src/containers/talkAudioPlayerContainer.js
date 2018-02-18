@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSelectedTeacher } from '../actions/selectedTeacherActions';
+import { addSelectedTalk } from '../actions/selectedTalkActions';
+import { addTagToTalk } from '../actions/selectedTalkActions';
 import TalksHeader from '../components/talks/talksHeader';
 import TalksPlaylist from '../components/talks/talksPlaylist';
 import TalkDescription from '../components/talks/talkDescription';
@@ -13,28 +15,43 @@ class TalkAudioPlayerContainer extends Component {
   constructor() {
     super();
 
+    this.onHandleSubmit = this.onHandleSubmit.bind(this);
     this.state = {
-      currentTalk: null,
       showPlaylist: true,
       showDescription: false,
+      showTags: false,
+      tagText: ''
     }
   }
 
   componentDidMount = () => {
-      this.props.fetchSelectedTeacher( this.props.match );
+    this.props.fetchSelectedTeacher( this.props.match );
   }
 
   onHandleClick = (talk) => {
+    this.props.addSelectedTalk( talk );
+  }
+
+  onHandleChange = (e) => {
     this.setState({
-      currentTalk: talk,
+      tagText: e.target.value,
     })
   }
 
-  showComponentChange = (type) => {
+  onHandleSubmit = (e) => {
+    e.preventDefault();
+    this.props.addTagToTalk( this.props.selectedTalk, this.state.tagText );
+    this.setState( { tagText: '' });
+  }
+
+  // Hiding/Showing selected component 'Playlist, Description, Tags'
+  onComponentChange = (type) => {
     if ( type === 'talks' ) {
-      this.setState({ showPlaylist: true, showDescription: false })
+      this.setState({ showPlaylist: true, showDescription: false, showTags: false })
+    } else if ( type === 'description') {
+      this.setState({ showPlaylist: false, showDescription: true, showTags: false })
     } else {
-      this.setState({ showPlaylist: false, showDescription: true })
+      this.setState({ showPlaylist: false, showDescription: false, showTags: true })
     }
   }
 
@@ -44,14 +61,35 @@ class TalkAudioPlayerContainer extends Component {
       return <h2>Loading...</h2>;
     }
     const { monastery, talks } = teacher;
+    const { selectedTalk } = this.props;
+    
     return (
       <div>
         <TalksHeader monastery={ monastery } teacher={ teacher } />
-        <AudioPlayer talk={ this.state.currentTalk || this.props.selectedTalk || talks[0] } teacher={ teacher } />
-        <PlaylistNavbar onHandleClick={this.showComponentChange} />
-        { this.state.showPlaylist ? <TalksPlaylist talks={ talks } teacher={ teacher } onHandleClick={this.onHandleClick} /> : null }
-        { this.state.showDescription ? <TalkDescription talk={ this.state.currentTalk || this.props.selectedTalk || talks[0] } /> : null }
-        { this.state.showTags ? <TalkTags /> : null }
+        <AudioPlayer talk={ selectedTalk } teacher={ teacher } />
+        <PlaylistNavbar onHandleClick={this.onComponentChange} />
+
+        { this.state.showPlaylist
+          ? <TalksPlaylist
+              talks={ talks }
+              teacher={ teacher }
+              onHandleClick={this.onHandleClick}
+            /> : null
+        }
+
+        { this.state.showDescription
+          ? <TalkDescription talk={ selectedTalk } /> : null
+        }
+
+        { this.state.showTags
+          ? <TalkTags
+              talk={ selectedTalk }
+              onHandleChange={this.onHandleChange}
+              onHandleSubmit={this.onHandleSubmit}
+              tagText={this.state.tagText}
+            />
+          : null
+        }
       </div>
     )
   }
@@ -68,7 +106,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchSelectedTeacher }, dispatch);
+  return bindActionCreators({
+    fetchSelectedTeacher,
+    addSelectedTalk,
+    addTagToTalk }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TalkAudioPlayerContainer);
@@ -76,13 +117,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(TalkAudioPlayerConta
 
 // todo: selecting a Most Favorited talk or Most Recent Talk needs to some way pass this info to this
 // Container render.
-
-// Fix for render once redux state is returned
-// render() {
-//   // Don't forget to connect the component to the Redux store yada yada
-//   const { loading } = this.props;
-//   return (
-//     !loading &&
-//     <MyComponent />
-//   );
-// }
