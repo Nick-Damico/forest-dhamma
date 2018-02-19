@@ -6,11 +6,11 @@ class Api::V1::TalksController < ApiController
   end
 
   def create
-    talk = Talk.new(talk_params)
-    if talk.save
-      render json: talk, status: 200
+    @talk = Talk.new(talk_params)
+    if @talk.save
+      render json: @talk, status: 200
     else
-      render json: { message: talk.errors }, status: 400
+      render json: { message: @talk.errors }, status: 400
     end
   end
 
