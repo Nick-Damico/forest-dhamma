@@ -61,12 +61,12 @@ class TalkAudioPlayerContainer extends Component {
       return <h2>Loading...</h2>;
     }
     const { monastery, talks } = teacher;
-    const { selectedTalk } = this.props;
-    
+    const talk = this.props.selectedTalk || teacher.talks[0];
+
     return (
       <div>
         <TalksHeader monastery={ monastery } teacher={ teacher } />
-        <AudioPlayer talk={ selectedTalk } teacher={ teacher } />
+        <AudioPlayer talk={ talk } teacher={ teacher } />
         <PlaylistNavbar onHandleClick={this.onComponentChange} />
 
         { this.state.showPlaylist
@@ -78,12 +78,12 @@ class TalkAudioPlayerContainer extends Component {
         }
 
         { this.state.showDescription
-          ? <TalkDescription talk={ selectedTalk } /> : null
+          ? <TalkDescription talk={ talk } /> : null
         }
 
         { this.state.showTags
           ? <TalkTags
-              talk={ selectedTalk }
+              talk={ talk }
               onHandleChange={this.onHandleChange}
               onHandleSubmit={this.onHandleSubmit}
               tagText={this.state.tagText}
