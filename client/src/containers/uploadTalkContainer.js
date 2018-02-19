@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchAllTeachers } from '../actions/teacherActions';
 import { uploadTalk } from '../actions/uploadActions';
+import { Link } from 'react-router-dom';
 
 class UploadTalkContainer extends Component {
   constructor() {
@@ -25,16 +26,37 @@ class UploadTalkContainer extends Component {
   onHandleSubmit = (e) => {
     e.preventDefault();
     this.props.uploadTalk( this.state )
-
+    this.setState({
+      teacher_id: '',
+      title: '',
+      file_url: '',
+      language: '',
+      description: ''
+    })
   }
 
-
   render() {
+    let errorMsg = null;
     const { loading } = this.props;
     if ( loading ) {
       return <h2>Loading...</h2>
     }
-    const { teachers } = this.props;
+
+    const { teachers, talk } = this.props;
+    if ( talk && talk.status === "success" ) {
+      const monastery = teachers.filter(teacher => teacher.id === talk.talk.teacher_id)[0].monastery;
+      return (
+        <div>
+          <h3>Upload Successful</h3>
+          <Link to={`/monasteries/${monastery.id}`}>Go to Monastery</Link>
+        </div>
+      )
+    }
+
+    if ( talk && talk.status === "error" ) {
+      errorMsg = <h3>Error: {JSON.stringify(talk.message)} </h3>;
+    }
+
     return (
       <div>
         <header>
@@ -43,6 +65,7 @@ class UploadTalkContainer extends Component {
             Your favorite talks
           </p>
         </header>
+        { errorMsg }
         <form onSubmit={this.onHandleSubmit}>
           <select
             required onChange={(e) => this.setState({ teacher_id: e.target.value })}>
@@ -91,6 +114,7 @@ const mapStateToProps = (state) => {
   return {
     teachers: teachers,
     loading: loading,
+    talk: state.selectedTalk
   }
 }
 

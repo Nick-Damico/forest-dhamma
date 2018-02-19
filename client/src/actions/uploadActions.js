@@ -12,6 +12,6 @@ export function uploadTalk(data) {
       }
     })
       .then(res => res.json())
-        .then(json => dispatch({ type: ADD_SELECTED_TALK, payload: json.talk }))
+        .then(json => dispatch({ type: ADD_SELECTED_TALK, payload: json }))
   }
 }
