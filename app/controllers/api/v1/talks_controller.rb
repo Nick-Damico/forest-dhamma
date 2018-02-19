@@ -8,17 +8,17 @@ class Api::V1::TalksController < ApiController
   def create
     @talk = Talk.new(talk_params)
     if @talk.save
-      render json: @talk, status: 200
+      render json: { status: "success", talk: @talk }, status: 200
     else
-      render json: { message: @talk.errors }, status: 400
+      render json: { status: "error", message: @talk.errors }, status: 400
     end
   end
 
   def show
     if @talk
-      render json: @talk, status: 200
+      render json: { staus: "success", talk: @talk }, status: 200
     else
-      render json: { message: "Resource not found." }, status: 404
+      render json: { status: "error", message: "Resource not found." }, status: 404
     end
   end
 
