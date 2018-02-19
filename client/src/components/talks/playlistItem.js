@@ -11,7 +11,7 @@ const playlistItem = ({ teacher, talk, onHandleClick }) => {
       <img style={ imgStyle } src={ profile_img } alt={`profile pic of ${ name }`} />
       <div className="teacherList-item--details" style={ itemDetails }>
         <h4>{ title }</h4>
-        <span>{ moment(created_at).format("MMM Do YYYY") } { `${favorites} favorites` }</span>
+        <span>{ moment(created_at).format("MMM Do YYYY") } { `${ favorites || 0 } favorites` }</span>
         <button onClick={() => onHandleClick(talk)}>Play</button>
       </div>
     </div>
