@@ -3,6 +3,9 @@ class Talk < ApplicationRecord
   belongs_to :teacher
   has_many :tag_talks
   has_many :tags, through: :tag_talks
+
+  validates :title, :file_url, presence: true
+  validates :title, uniqueness: { case_sensitive: false }
   accepts_nested_attributes_for :tags
 
     def tags_attributes=(tags_attributes)
