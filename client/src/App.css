@@ -1,3 +1,7 @@
+/* Google/fonts imports */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400');
+
+
 .App {
   text-align: center;
 }
@@ -26,3 +30,240 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* ****************************************************
+   Base Styles
+ **************************************************** */
+
+a {
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2%;
+}
+
+p {
+  margin-top: 0;
+}
+
+
+/* Mobile first CSS */
+
+/* ****************************************************
+   Monasteries Page
+ **************************************************** */
+
+.monastery-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.monastery-container--item {
+  display: inherit;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 215px;
+  margin-bottom: 2%;
+}
+
+  .monastery-container--item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+    .monastery-container--item:nth-child(odd):after {
+      background: rgba(196, 142, 32, .4);
+    }
+
+    .monastery-container--item:nth-child(even):after {
+      background: rgba(116, 169, 126, .4);
+    }
+
+.monastery-container--item-inner {
+  position: relative;
+  z-index: 3;
+}
+
+.monastery-contianer--item-title {
+  color: white;
+  font-weight: 100;
+  font-size: 1.875rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.monastery-container--item-inner p {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+
+.monastery-item--arrow {
+  color: white;
+  font-size: 1.2rem;
+}
+
+
+
+/* ****************************************************
+   Teachers Select Page
+ **************************************************** */
+
+/* *******************************
+ Teachers Container Header
+******************************* */
+
+.teachers-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.teachers-container--main {
+  flex-grow: 1;
+}
+
+.teachers-header {
+  position: relative;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 104px;
+  padding-left: 3%;
+}
+
+.teachers-header--inner {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+
+  .teachers-header--inner h2 {
+    color: white;
+    font-size: 1.875rem;
+    font-weight: 100;
+    line-height: 1.2rem;
+  }
+
+  .teachers-header--inner span {
+    margin-left: 2%;
+    font-weight: 300;
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+.teachers-header::after {
+  content: "";
+  position: absolute;
+  background: rgba(116, 169, 126, .4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+
+
+/* *******************************
+ Teachers List
+******************************* */
+
+.teachers-list {
+  display: flex;
+  flex-direction: column;
+}
+
+  .teachers-list--title {
+    margin-left: 3%;
+    font-weight: 300;
+  }
+
+.teachers-list--item {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid black;
+  margin-bottom: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+  .teachers-list--item:first-of-type {
+    margin-top: 1%;
+  }
+
+  .teachers-list--item .teacher-img {
+    height: 72px;
+    width: 72px;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+
+  .teachers-list--item--details {
+    flex-grow: 2;
+    margin-left: 3%;
+    height: 100%;
+  }
+
+  .teachers-list--item--details p {
+    font-weight: 100;
+  }
+
+.teachers-list--arrow,
+.teachers-footer--arrow {
+  margin-left: 3%;
+  padding: 4px;
+}
+
+.heart-logo {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 2px;
+}
+
+
+
+/* *******************************
+ Teachers Footer
+******************************* */
+
+.teachers-container--footer {
+  padding-right: 3%;
+  padding-left: 3%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #f38181; /* Old browsers */
+  background: linear-gradient(45deg, #f38181 0%,#fce38a 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.teachers-container--footer {
+  display: flex;
+  flex-direction: row;
+  padding-left: 3%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.teachers-footer--arrow {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+
+
+/* ****************************************************
+   Audio Player Page
+ **************************************************** */
