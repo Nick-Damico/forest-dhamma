@@ -2,10 +2,10 @@ import React from 'react';
 
 const PlaylistNavbar = ({ onHandleClick }) => {
   return (
-    <div>
-        <button onClick={() => onHandleClick('talks')}>Talks</button>
-        <button onClick={() => onHandleClick('description')}>Description</button>
-        <button onClick={() => onHandleClick('tags')}>Tags</button>
+    <div className="playlist-navbar">
+        <a onClick={() => onHandleClick('talks')}>Talks</a>
+        <a onClick={() => onHandleClick('description')}>Description</a>
+        <a onClick={() => onHandleClick('tags')}>Tags</a>
     </div>
   )
 }

@@ -4,8 +4,11 @@ import TagItem from './tagItem';
 const TalkTags = ({ talk, onHandleChange, onHandleSubmit, tagText }) => {
   const talkTags = talk.tags.map((tag, index) => <TagItem key={ index } tag={ tag } />);
   return (
-      <div>
+      <div className="tags-container">
           <h5>Tags</h5>
+          <div className="tags-container--items">
+            { talkTags }
+          </div>
           <div style={ { marginBottom: 10}}>
             <form onSubmit={ onHandleSubmit }>
               <label>Add Tag: </label>
@@ -13,7 +16,6 @@ const TalkTags = ({ talk, onHandleChange, onHandleSubmit, tagText }) => {
               <input type="submit" />
             </form>
           </div>
-          { talkTags }
       </div>
   )
 }

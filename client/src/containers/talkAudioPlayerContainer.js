@@ -10,6 +10,7 @@ import TalkDescription from '../components/talks/talkDescription';
 import PlaylistNavbar from '../components/talks/playlistNavbar';
 import TalkTags from '../components/talks/talkTags';
 import AudioPlayer from '../components/talks/audioPlayer';
+import TalksFooter from '../components/talks/talksFooter';
 
 class TalkAudioPlayerContainer extends Component {
   constructor() {
@@ -64,32 +65,35 @@ class TalkAudioPlayerContainer extends Component {
     const talk = this.props.selectedTalk || teacher.talks[0];
 
     return (
-      <div>
+      <div className="audioplayer-container">
         <TalksHeader monastery={ monastery } teacher={ teacher } />
         <AudioPlayer talk={ talk } teacher={ teacher } />
-        <PlaylistNavbar onHandleClick={this.onComponentChange} />
+        <div className="playlist-container">
+          <PlaylistNavbar onHandleClick={this.onComponentChange} />
 
-        { this.state.showPlaylist
-          ? <TalksPlaylist
-              talks={ talks }
-              teacher={ teacher }
-              onHandleClick={this.onHandleClick}
-            /> : null
-        }
+          { this.state.showPlaylist
+            ? <TalksPlaylist
+                talks={ talks }
+                teacher={ teacher }
+                onHandleClick={this.onHandleClick}
+              /> : null
+          }
 
-        { this.state.showDescription
-          ? <TalkDescription talk={ talk } /> : null
-        }
+          { this.state.showDescription
+            ? <TalkDescription talk={ talk } /> : null
+          }
 
-        { this.state.showTags
-          ? <TalkTags
-              talk={ talk }
-              onHandleChange={this.onHandleChange}
-              onHandleSubmit={this.onHandleSubmit}
-              tagText={this.state.tagText}
-            />
-          : null
-        }
+          { this.state.showTags
+            ? <TalkTags
+                talk={ talk }
+                onHandleChange={this.onHandleChange}
+                onHandleSubmit={this.onHandleSubmit}
+                tagText={this.state.tagText}
+              />
+            : null
+          }
+        </div>
+        <TalksFooter />
       </div>
     )
   }

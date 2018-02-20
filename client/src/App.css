@@ -265,5 +265,137 @@ p {
 
 
 /* ****************************************************
-   Audio Player Page
+   Audioplayer Page
  **************************************************** */
+
+ .audioplayer-container,
+ .audioplayer-container-header {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+ }
+
+
+
+ /* *******************************
+  Audioplayer Container Header
+ ******************************* */
+
+ .audioplayer-container-header {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  z-index: 1;
+  padding-bottom: 36px;
+  margin-bottom: 20%;
+ }
+
+ .audioplayer-container-header::after {
+   content: "";
+   background: rgba(116, 169, 126, .6);
+   -webkit-filter: blur(10px);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 2;
+ }
+
+ .audioplayer-container-header--title {
+   position: relative;
+   color: white;
+   text-shadow: 1px 1px 3px black;
+   font-weight: 100;
+   font-size: 1.875rem;
+   text-align: center;
+   z-index: 3;
+ }
+
+ .audioplayer-container-header--img {
+   position: absolute;
+   border-radius: 50%;
+   top: 66%;
+   border: 1px solid black;
+   z-index: 4;
+ }
+
+
+
+ /* *******************************
+  Audioplayer Header
+ ******************************* */
+
+.audioplayer-header {
+  text-align: center;
+}
+
+  .audioplayer-header h2 {
+    font-size: 2.375rem;
+    font-weight: 300;
+    margin-top: 1%;
+  }
+  .audioplayer-header h5 {
+    color: #a7a7a7;
+    margin-top: 1%;
+    margin-bottom: 2rem;
+    font-weight: 100;
+    font-size: 1.4375rem;
+  }
+
+
+
+  /* *******************************
+   Audioplayer Controls
+  ******************************* */
+  .playlist-container {
+    margin-left: 4%;
+    text-align: left;
+    margin-right: 4%;
+  }
+  .audioplayer-controls {
+    border: 1px solid black;
+  }
+
+
+  /* *******************************
+   Playlist Navbar
+  ******************************* */
+
+  .playlist-navbar {
+    text-align: left;
+    margin-top: 4%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #a7a7a7;
+    margin-bottom: 2%;
+  }
+
+    .playlist-navbar a {
+      display: inline-block;
+      font-size: 1.75rem;
+      font-weight: 100;
+      margin-right: 2%;
+    }
+
+
+
+/* *******************************
+ Playlist Items
+******************************* */
+
+.playlist-footer {
+  padding: 4% 0;
+  border-top: 1px solid #a7a7a7;
+  margin-top: 2%;
+}
+
+
+
+/* *******************************
+ Tags container
+******************************* */
+
+.tags-container--items {
+  margin-bottom: 4%;
+}

@@ -5,13 +5,13 @@ const playlistItem = ({ teacher, talk, onHandleClick }) => {
   const { name, profile_img } = teacher;
   const { title, favorites, created_at } = talk;
   return (
-    <div className="teacherList-item">
-      <img src={ profile_img } alt={`profile pic of ${ name }`} />
-      <div className="teacherList-item--details">
+    <div className="teachers-list--item">
+      <img className="teacher-img" src={ profile_img } alt={`profile pic of ${ name }`} />
+      <div className="teachers-list--item--details">
         <h4>{ title }</h4>
-        <span>{ moment(created_at).format("MMM Do YYYY") } { `${ favorites || 0 } favorites` }</span>
-        <button onClick={() => onHandleClick(talk)}>Play</button>
+        <p>{ moment(created_at).format("MMM Do YYYY") } { `${ favorites || 0 } favorites` }</p>
       </div>
+      <button onClick={() => onHandleClick(talk)}>&#9658;</button>
     </div>
   )
 }
