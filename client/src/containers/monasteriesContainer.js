@@ -23,7 +23,7 @@ class MonasteryContainer extends Component {
       })
     }
     return(
-      <div>
+      <div className="monastery-container ">
         MonasteryList Page
         {monasteryItems}
       </div>
