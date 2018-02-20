@@ -7,7 +7,7 @@ import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/talks/recentTalk';
 import FavoriteTalk from '../components/talks/favoriteTalk';
-
+import Footer from '../components/talks/footer';
 
 class TeachersContainer extends Component {
   componentDidMount() {
@@ -25,12 +25,13 @@ class TeachersContainer extends Component {
       return <h2>loading...</h2>
     }
 
-    const { teachers, monastery } = this.props;
+    const { teachers } = this.props;
+    let monastery = teachers[0].monastery
     if( teachers.length === 0 ) {
-      teacherList = <h3>Currently no dhamma talks available for {monastery}</h3>;
+      teacherList = <h3>Currently no dhamma talks available for { monastery.name }</h3>;
     }
 
-    teacherList = <TeachersList onHandleClick={this.onHandleClick} teachers={teachers} />
+    teacherList = <TeachersList onHandleClick={ this.onHandleClick } teachers={ teachers } />
     let talks = [].concat(...teachers.map(teacher => teacher.talks));
     // Set favorite talk from collection
     recentTalk = talks.sort((a,b) => {
@@ -46,15 +47,25 @@ class TeachersContainer extends Component {
     favoriteTalk.teacher = teachers.filter(teacher => teacher.id === favoriteTalk.teacher_id);
 
     return (
-      <div>
-        <TeachersHeader monastery={monastery} />
-        { teacherList }
-        <RecentTalk onHandleClick={this.onHandleClick} talk={recentTalk}/>
-        <FavoriteTalk onHandleClick={this.onHandleClick} talk={favoriteTalk}/>
+      <div className="teachers-container">
+        <TeachersHeader monastery={ monastery } />
+        <main className="teachers-container--main">
+          { teacherList }
+          <RecentTalk onHandleClick={ this.onHandleClick } talk={ recentTalk }/>
+          <FavoriteTalk onHandleClick={ this.onHandleClick } talk={ favoriteTalk }/>
+        </main>
+        <Footer monastery={ monastery } />
       </div>
     )
   }
 }
+
+// list of components to contain in directory
+// TeacherHeader.js
+// TeachersList
+// favoriteTalk
+// recentTalk
+// Footer
 
 TeachersContainer.defaultProps = { loading: true };
 
@@ -66,8 +77,7 @@ function mapStateToProps(state) {
   const { teachers, monastery, loading } = state.teachers;
   return {
     teachers: teachers,
-    loading: loading,
-    monastery: monastery
+    loading: loading
    }
 }
 

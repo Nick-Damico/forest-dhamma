@@ -12,7 +12,7 @@ const TeachersList = ({ teachers, onHandleClick }) => {
      )
   });
   return (
-    <div className="teachersContainer">
+    <div className="teachers-list">
       {teacherItems}
     </div>
   )

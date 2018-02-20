@@ -1,21 +1,24 @@
 import React from 'react';
-import { styles } from '../teachers/teacherItem';
 import { Link } from 'react-router-dom';
+import heart from '../../heart.svg';
+import {shorten} from '../../helper';
 
 const FavoriteTalk = ({ talk, onHandleClick }) => {
   const { title, favorites, teacher } = talk;
   const { name, profile_img, id } = teacher[0];
-  const { imgStyle, teacherList, itemDetails } = styles;
   return(
     <div>
-        <h3>Favorite Talk</h3>
-        <div className="teacherList-item" style={ teacherList }>
-          <img style={ imgStyle } src={ profile_img } alt={`profile pic of ${ name }`} />
-          <div className="teacherList-item--details" style={ itemDetails }>
-            <h4>{ title }</h4>
-            <span>{ name } - { favorites }</span>
-            <Link onClick={() => onHandleClick(talk)} to={`/teachers/${id}`}>talks</Link>
+        <h3 className="teachers-list--title">Favorite Talk</h3>
+        <div className="teachers-list--item">
+          <img className="teacher-img"  src={ profile_img } alt={`profile pic of ${ name }`} />
+          <div className="teachers-list--item--details">
+            <h4>{ shorten(title, 30) }</h4>
+            <p><img src={heart} alt="" className="heart-logo" />{`${favorites} favorites`}</p>
           </div>
+            <Link className="teachers-list--arrow"
+                  onClick={() => onHandleClick(talk)}
+                  to={`/teachers/${id}`}>>
+            </Link>
         </div>
     </div>
   )
