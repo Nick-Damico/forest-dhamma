@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchAllTeachers } from '../actions/teacherActions';
 import { uploadTalk } from '../actions/uploadActions';
 import { Link } from 'react-router-dom';
+import TalksFooter from '../components/talks/talksFooter';
 
 class UploadTalkContainer extends Component {
   constructor() {
@@ -58,49 +59,69 @@ class UploadTalkContainer extends Component {
     }
 
     return (
-      <div>
-        <header>
+      <div className="upload-container">
+        <header className="upload-container--header">
           <p>
             Upload and Share <br />
             Your favorite talks
           </p>
         </header>
-        { errorMsg }
-        <form onSubmit={this.onHandleSubmit}>
-          <select
-            required onChange={(e) => this.setState({ teacher_id: e.target.value })}>
-            <option defaultValue>Select Teacher</option>
-            {teachers.map((teacher,index) => <option key={ index } value={ teacher.id }>{ teacher.name }</option>)}
-          </select><br />
-          <input type="text"
-                 name="title"
-                 placeholder="Title"
-                 onChange={(e) => this.setState({ title: e.target.value })}
-                 value={ this.state.title }
-                 required
-          /><br />
-          <input type="text"
-                 name="file_url"
-                 placeholder="File Path"
-                 onChange={(e) => this.setState({ file_url: e.target.value })}
-                 value={ this.state.file_url }
-                 required
-          /><br />
-          <input type="text"
-                 name="language"
-                 placeholder="Language"
-                 onChange={(e) => this.setState({ language: e.target.value })}
-                 value={ this.state.language }
-                 required
-          /><br />
-          <textarea
-            placeholder="Description of Talk"
-            onChange={(e) => this.setState({ description: e.target.value })}
-            value={this.state.description}
-            required>
-          </textarea><br />
-          <button type="submit">Upload Talk</button>
-      </form>
+        <div className="error-msg">
+            { errorMsg }
+        </div>
+        <div className="upload-form-container">
+          <form onSubmit={this.onHandleSubmit}>
+
+            <div className="input-container">
+              <select
+                required className="custom-select" onChange={(e) => this.setState({ teacher_id: e.target.value })}>
+                <option defaultValue>Select Teacher</option>
+                {teachers.map((teacher,index) => <option key={ index } value={ teacher.id }>{ teacher.name }</option>)}
+              </select>
+            </div>
+
+            <div className="input-container">
+              <input type="text"
+                     name="title"
+                     placeholder="Title"
+                     onChange={(e) => this.setState({ title: e.target.value })}
+                     value={ this.state.title }
+                     required
+              />
+            </div>
+
+            <div className="input-container">
+              <input type="text"
+                     name="file_url"
+                     placeholder="File Path"
+                     onChange={(e) => this.setState({ file_url: e.target.value })}
+                     value={ this.state.file_url }
+                     required
+              />
+            </div>
+
+            <div className="input-container">
+              <input type="text"
+                     name="language"
+                     placeholder="Language"
+                     onChange={(e) => this.setState({ language: e.target.value })}
+                     value={ this.state.language }
+                     required
+              />
+            </div>
+
+            <div className="input-container">
+              <textarea
+                placeholder="Description of Talk"
+                onChange={(e) => this.setState({ description: e.target.value })}
+                value={this.state.description}
+                required>
+              </textarea>
+            </div>
+            <button className="upload-button" type="submit">Upload Talk</button>
+        </form>
+      </div>
+      <TalksFooter />
     </div>
 
     )
