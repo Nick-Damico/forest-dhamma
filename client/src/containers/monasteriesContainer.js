@@ -24,7 +24,6 @@ class MonasteryContainer extends Component {
     }
     return(
       <div className="monastery-container ">
-        MonasteryList Page
         {monasteryItems}
       </div>
     )

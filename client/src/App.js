@@ -6,6 +6,7 @@ import MonasteryList from './containers/monasteriesContainer';
 import TeachersContainer from './containers/teachersContainer';
 import TalkAudioPlayerContainer from './containers/talkAudioPlayerContainer';
 import UploadTalkContainer from './containers/uploadTalkContainer';
+import NavBar from './containers/navBar';
 
 class App extends Component {
 
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          <NavBar />
           <Route exact path="/" render={ Home } />
           <Route exact path="/monasteries" component={ MonasteryList } />
           <Route exact path="/monasteries/:monasteryId" component={ TeachersContainer } />
