@@ -7,7 +7,7 @@ import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/talks/recentTalk';
 import FavoriteTalk from '../components/talks/favoriteTalk';
-import Footer from '../components/talks/footer';
+import TalksFooter from '../components/talks/talksFooter';
 
 class TeachersContainer extends Component {
   componentDidMount() {
@@ -54,7 +54,7 @@ class TeachersContainer extends Component {
           <RecentTalk onHandleClick={ this.onHandleClick } talk={ recentTalk }/>
           <FavoriteTalk onHandleClick={ this.onHandleClick } talk={ favoriteTalk }/>
         </main>
-        <Footer monastery={ monastery } />
+        <TalksFooter />
       </div>
     )
   }
