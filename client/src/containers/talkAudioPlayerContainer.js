@@ -41,7 +41,8 @@ class TalkAudioPlayerContainer extends Component {
 
   onHandleSubmit = (e) => {
     e.preventDefault();
-    this.props.addTagToTalk( this.props.selectedTalk, this.state.tagText );
+    const talk = this.props.selectedTalk || this.props.teacher.talks[0]
+    this.props.addTagToTalk( talk, this.state.tagText );
     this.setState( { tagText: '' });
   }
 

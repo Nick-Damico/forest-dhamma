@@ -74,7 +74,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  const { teachers, monastery, loading } = state.teachers;
+  const { teachers, loading } = state.teachers;
   return {
     teachers: teachers,
     loading: loading
