@@ -113,6 +113,7 @@ ajahn_naniko = Teacher.create(
   monastery: abhayagiri
 )
 
+
 ############################
 # Amaravati Teachers
 ############################
@@ -146,6 +147,45 @@ luang_por_khemadhammo = Teacher.create(
   monastery: forest_hermitage
 )
 
+############################
+# Bodhinyanarama Teachers
+############################
+
+ajahn_chandako = Teacher.create(
+  name: 'Ajahn Chandako',
+  profile_img: 'https://www.theosophical.org/files/events/nationalprograms/AjahnChandako_f.jpg',
+  monastery: bodhinyanarama
+)
+
+############################
+# buddhabodhivana Teachers
+############################
+
+ajahn_kalyano = Teacher.create(
+  name: 'Ajahn Kalyano',
+  profile_img: 'http://www.dhammagiri.org.au/uploads/1/0/9/7/10977520/1609988.png',
+  monastery: buddhabodhivana
+)
+
+############################
+# Cittaviveka Teachers
+############################
+
+ajahn_sucitto = Teacher.create(
+  name: 'Ajahn Sucitto',
+  profile_img: 'https://publicdata.insighttimer.com/publisher_data/pictures/000/001/169/medium/Aj_Sucitto_Photo_1_.jpg',
+  monastery: cittaviveka
+)
+
+############################
+# Dhammapala Teachers
+############################
+
+ajahn_khemasiri = Teacher.create(
+  name: 'Ajahn Khemasiri',
+  profile_img: 'https://www.fsnewsletter.org/html/86/assets/images/content/Aj_Khemasiri.jpg',
+  monastery: dhammapala
+)
 
 ############################################################################################################################################################
 # Tags
@@ -301,3 +341,56 @@ life_story = Talk.create(
 life_story.tags << autobiography
 life_story.tags << faith
 life_story.save
+
+
+############################
+# Bodhinyanarama Talks
+############################
+
+inspiration_to_practice = Talk.create(
+  title: 'Inspiration to practice',
+  file_url: 'http://vimutti.org.nz/audio/talks/ac/20111030_Bodhinyanarama_Gratitude_for_the_Sangha.mp3',
+  language: 'English',
+  teacher: ajahn_chandako,
+  favorites: 2
+)
+
+
+############################
+# buddhabodhivana Talks
+############################
+
+stilling_mind_body = Talk.create(
+  title: 'Stilling The Mind and Body',
+  file_url: 'https://cdn.amaravati.org/wp-content/uploads/2014/10/11/Amaravati-2011-08-Stilling-The-Mind-Around-The-Body.mp3',
+  language: 'English',
+  teacher: ajahn_kalyano,
+  description: 'This talk was given on 12 January 2011 at Amaravati Buddhist Monastery during the three month winter retreat (January till March 2011).',
+  favorites: 4
+)
+
+############################
+# Cittaviveka Talks
+############################
+
+a_rocky_path = Talk.create(
+  title: 'A Rocky Path',
+  file_url:'https://cdn.amaravati.org/wp-content/uploads/2014/10/11/Amaravati-2011-08-Stilling-The-Mind-Around-The-Body.mp3',
+  language: 'English',
+  teacher: ajahn_sucitto,
+  description: 'Ajahn Sucitto gives a talk on 18-11-17 at Cittaviveka Monastery.',
+  favorites: 2,
+)
+
+############################
+# Dhammapala Talks
+############################
+
+a_rocky_path = Talk.create(
+  title: 'About Truth',
+  file_url:'https://dhammapala.ch/wp-content/uploads/2015/10/Ajahn-Khemasiri-About-truth.mp3',
+  language: 'English',
+  teacher: ajahn_khemasiri,
+  description: 'Ajahn Khemasiri gives a talk at Dhammapala on Saturday evening on the subject of truth.',
+  favorites: 3,
+)
