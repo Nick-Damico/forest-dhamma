@@ -22,7 +22,7 @@ the API and making a 'POST' request to '/talks'. Note, the file path needs to be
 an address to a already hosted file. In future updates you will be able to upload '.mp3' files
 directly.
 
-#Installation
+# Installation
 * How to run the test suite
   - `git clone https://github.com/Nick-Damico/forest-dhamma.git`
   - `cd forest-dhamma`
