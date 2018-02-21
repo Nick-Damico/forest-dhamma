@@ -1,6 +1,7 @@
 /* Google/fonts imports */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400');
-
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('normalize.css');
 
 .App {
   text-align: center;
@@ -46,11 +47,19 @@ h1,h2,h3,h4,h5 {
 
 p {
   margin-top: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 400;
+}
+
+html, body, .landing-page--main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 
 /* Mobile first CSS */
-
 
 /* ********************************************************************************************************
    NavBar
@@ -90,6 +99,75 @@ p {
   border-bottom: 1px solid black;
   color: black;
 }
+
+section {
+  flex: 1 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+
+/* ********************************************************************************************************
+   Landing Page
+ ******************************************************************************************************** */
+
+.landing-page .App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('./contact-banner-2x.jpg') no-repeat;
+  background-size: cover;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  font-weight: 100;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page--main {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page--main section {
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  justify-content: center;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.landing-page--main section p,
+.App-header p,
+small {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+.main--share {
+  background-color: #F4BA81;
+}
+
+.main--discover {
+  background-color: #B68B60;
+}
+
+.footer {
+  text-align: center;
+  border-top: 1px solid #a7a7a7;
+  flex-shrink: 0;
+}
+
 
 /* ****************************************************
    Monasteries Page
@@ -424,11 +502,6 @@ p {
  Playlist Items
 ******************************* */
 
-.playlist-footer {
-  padding: 4% 0;
-  border-top: 1px solid #a7a7a7;
-  margin-top: 2%;
-}
 
 
 
@@ -477,6 +550,11 @@ p {
   text-shadow: 1px 1px 3px black;
 }
 
+@media only screen and (min-width: 420px) {
+   .upload-container--header {
+     background-size: cover;
+   }
+ }
 
 
 /* *******************************
