@@ -51,7 +51,9 @@ p {
   font-size: 400;
 }
 
-html, body, .landing-page--main {
+html, body,
+.landing-page--main,
+.audioplayer-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -502,7 +504,9 @@ small {
  Playlist Items
 ******************************* */
 
-
+.playlist-container {
+  flex: 1;
+}
 
 
 /* *******************************
