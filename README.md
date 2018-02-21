@@ -11,10 +11,10 @@
   `Rails 5.1.4`
 
 # Usage
-Load app search for talks by monastic teachers by selecting a monastery, then you can
+This app allows users to search for talks by monastic teachers by selecting a monastery, then you can
 either choose a teacher or select the most recently uploading talk or most favorited talk.
 
-On the audio player page you can see a list of all that selected teachers talks, a description of the current talk, or click on 'tags' and see a list of category tags associated with the
+On the audio player page you can see a list of all talks from the selected teacher, a description of the talk currently playing, and clicking on 'tags' will display a list of category tags associated with the
 current talk. You can use the form in the tags section to help better label talks with tags.
 
 Uploading talks can be done from the form under the 'upload' link in the navigation or using
@@ -24,12 +24,12 @@ directly.
 
 #Installation
 * How to run the test suite
+  - `git clone https://github.com/Nick-Damico/forest-dhamma.git`
+  - `cd forest-dhamma`
+  - `bundle install`
   - `createdb forest-dhamma-app_development`
   - `rails db:migrate`
   - `rails db:seed` <- MAKE SURE TO DO THIS STEP
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - `cd client`
+  - `npm install`
+  Then `rake start` to start both servers.
