@@ -33,3 +33,7 @@ directly.
   - `cd client`
   - `npm install`
   Then `rake start` to start both servers.
+
+
+# License
+The app is available as open source under the terms of the MIT License.
