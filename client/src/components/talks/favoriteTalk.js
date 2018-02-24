@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heart from '../../heart.svg';
+import heart from '../../icons/heart.svg';
 import {shorten} from '../../helper';
 
 const FavoriteTalk = ({ talk, onHandleClick }) => {

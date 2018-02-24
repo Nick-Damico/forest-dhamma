@@ -1,8 +1,8 @@
 import React from 'react';
 import TalksFooter from './talks/talksFooter';
 import about from '../about.svg';
-import MonkIcon from '../monk-icon.svg';
-import HeartIcon from '../heart.svg';
+import MonkIcon from '../icons/monk-icon.svg';
+import HeartIcon from '../icons/heart.svg';
 
 const Home = () => {
   return (
