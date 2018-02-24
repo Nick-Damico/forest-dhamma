@@ -1,4 +1,7 @@
-import { FETCH_TEACHERS, RECEIVED_TEACHERS, RECEIVED_TEACHERS_FROM_MONASTERY } from '../actions/teacherActions';
+import { FETCH_TEACHERS,
+         RECEIVED_TEACHERS,
+         RECEIVED_TEACHERS_FROM_MONASTERY
+       } from '../actions/teacherActions';
 
 function TeachersReducer(state = {
   teachers: [],

@@ -119,7 +119,7 @@ ajahn_naniko = Teacher.create(
 ############################
 ajahn_sumedho = Teacher.create(
   name: 'Ajahn Sumedho',
-  profile_img: 'http://www.bia.or.th/en/images/photo/Ajahn-Sumedho.jpg',
+  profile_img: 'https://mindfulnessexercises.com/wp-content/uploads/2016/12/ajahn-sumedho.jpg',
   monastery: amaravati
 )
 ajahn_candasiri = Teacher.create(
@@ -133,7 +133,7 @@ ajahn_candasiri = Teacher.create(
 ############################
 ajahn_munindo = Teacher.create(
   name: 'Ajahn Munindo',
-  profile_img: 'http://www.bia.or.th/en/images/photo/Ajahn-Sumedho.jpg',
+  profile_img: 'https://buddhacity.podbean.com/mf/web/txvgrd/Munindo.jpg',
   monastery: aruna
 )
 
