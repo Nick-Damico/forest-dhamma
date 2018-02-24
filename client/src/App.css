@@ -157,18 +157,90 @@ small {
   font-weight: 400;
 }
 
-.main--share {
-  background-color: #F4BA81;
-}
-
-.main--discover {
-  background-color: #B68B60;
-}
-
 .footer {
   text-align: center;
   border-top: 1px solid #a7a7a7;
   flex-shrink: 0;
+}
+
+@media only screen and (min-width: 325px) {
+   .landing-page .App-header {
+     height: 250px;
+   }
+ }
+
+ @media only screen and (min-width: 550px) {
+   .landing-page .App-header {
+     height: 450px;
+   }
+ }
+
+
+
+/* ****************************************************
+   About Page
+ **************************************************** */
+
+ .about-section--main {
+   background-color: #F4BA81;
+   display: flex;
+   justify-content: center;
+   padding-top: 4%;
+   padding-bottom: 4%;
+ }
+
+.about-section--main h3 {
+  margin-top: 0;
+  color: white;
+  font-weight: 100;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+.about-section--main p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.monitor-img {
+  max-width: 400px;
+  align-self: center;
+}
+
+
+
+/* ****************************************************
+   Discovery Section
+ **************************************************** */
+
+.discovery-section--main {
+  color: white;
+  background-color: #B68B60;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.discovery-section--main h3 {
+  margin-top: 0;
+  font-weight: 100;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+.discovery-section--text {
+  display: flex;
+  display: row;
+  font-size: 1.5rem;
+}
+
+.monk-icon--container {
+  width: 50%;
+  align-self: center;
+}
+
+.heart-icon {
+  width: 25px;
+  height: 25px;
 }
 
 

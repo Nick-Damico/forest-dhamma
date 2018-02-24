@@ -1,5 +1,8 @@
 import React from 'react';
 import TalksFooter from './talks/talksFooter';
+import about from '../about.svg';
+import MonkIcon from '../monk-icon.svg';
+import HeartIcon from '../heart.svg';
 
 const Home = () => {
   return (
@@ -12,17 +15,24 @@ const Home = () => {
         </p>
       </header>
       <main className="landing-page--main">
-        <section className="main--share">
+        <section className="about-section--main">
           <h3>Share Talks</h3>
           <p>
             Share the talks you love from your favorite teachers.
           </p>
+          <img className="monitor-img" src={about} alt="" />
         </section>
-        <section className="main--discover">
+        <section className="discovery-section--main">
           <h3>Discover Talks</h3>
-          <p>
-            Discover new talks and favorite the ones you love.
-          </p>
+          <div className="discovery-section--text">
+            <img src={HeartIcon} alt="" className="heart-icon" />
+            <p>
+              Discover new talks and favorite the ones you love.
+            </p>
+          </div>
+          <div className="monk-icon--container">
+            <img src={MonkIcon} className="monk-icon" alt="" />
+          </div>
         </section>
       </main>
       <TalksFooter />
