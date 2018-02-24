@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import Home from './components/home';
+import Home from './components/static/home';
 import MonasteryList from './containers/monasteriesContainer';
 import TeachersContainer from './containers/teachersContainer';
 import TalkAudioPlayerContainer from './containers/talkAudioPlayerContainer';

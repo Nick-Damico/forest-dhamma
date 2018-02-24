@@ -1,8 +1,8 @@
 import React from 'react';
-import TalksFooter from './talks/talksFooter';
-import about from '../about.svg';
-import MonkIcon from '../icons/monk-icon.svg';
-import HeartIcon from '../icons/heart.svg';
+import Footer from './footer';
+import about from '../../icons/about.svg';
+import MonkIcon from '../../icons/monk-icon.svg';
+import HeartIcon from '../../icons/heart.svg';
 
 const Home = () => {
   return (
@@ -35,7 +35,7 @@ const Home = () => {
           </div>
         </section>
       </main>
-      <TalksFooter />
+      <Footer />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchMonasteries } from '../actions/monasteryActions';
 import MonasteryItem from '../components/monasteries/monasteryItem';
-import TalksFooter from '../components/talks/talksFooter';
+import Footer from '../components/static/footer';
 
 class MonasteryContainer extends Component {
   componentDidMount = () => {
@@ -26,7 +26,7 @@ class MonasteryContainer extends Component {
     return(
       <div className="monastery-container ">
         {monasteryItems}
-        <TalksFooter />
+        <Footer />
       </div>
 
     )
