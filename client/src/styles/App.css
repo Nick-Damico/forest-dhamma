@@ -122,7 +122,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('./contact-banner-2x.jpg') no-repeat;
+  background: url('../images/contact-banner-2x.jpg') no-repeat;
   background-size: cover;
 }
 
@@ -617,7 +617,7 @@ small {
   justify-content: center;
   height: 275px;
   width: 100%;
-  background: url('./contact-banner-2x.jpg') no-repeat;
+  background: url('../images/contact-banner-2x.jpg') no-repeat;
   background-size: contain;
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
