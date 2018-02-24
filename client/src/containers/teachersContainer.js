@@ -5,8 +5,8 @@ import { fetchTeachers } from '../actions/teacherActions';
 import { addSelectedTalk, removeSelectedTalk } from '../actions/selectedTalkActions';
 import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
-import RecentTalk from '../components/talks/recentTalk';
-import FavoriteTalk from '../components/talks/favoriteTalk';
+import RecentTalk from '../components/teachers/recentTalk';
+import FavoriteTalk from '../components/teachers/favoriteTalk';
 import Footer from '../components/static/footer';
 
 class TeachersContainer extends Component {
@@ -59,13 +59,6 @@ class TeachersContainer extends Component {
     )
   }
 }
-
-// list of components to contain in directory
-// TeacherHeader.js
-// TeachersList
-// favoriteTalk
-// recentTalk
-// Footer
 
 TeachersContainer.defaultProps = { loading: true };
 
