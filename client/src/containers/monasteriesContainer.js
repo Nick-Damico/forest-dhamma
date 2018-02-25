@@ -11,18 +11,21 @@ class MonasteryContainer extends Component {
   }
 
   render() {
-    const { monasteries } = this.props;
+    const { monasteries, loading } = this.props;
     let monasteryItems;
-    if (monasteries.length !== 0) {
-      monasteryItems = monasteries[0].map((monastery, index) => {
-        return (
-          <MonasteryItem
-            key={index}
-            monastery={monastery}
-          />
-        )
-      })
+
+    if ( loading ) {
+      return <h2>Loading...</h2>
     }
+    monasteryItems = monasteries.map((monastery, index) => {
+      return (
+        <MonasteryItem
+          key={index}
+          monastery={monastery}
+        />
+      )
+    })
+    
     return(
       <div className="monastery-container ">
         {monasteryItems}
@@ -35,7 +38,8 @@ class MonasteryContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    monasteries: state.monasteries
+    monasteries: state.monasteries.monasteries,
+    loading: state.monasteries.loading
   }
 }
 
