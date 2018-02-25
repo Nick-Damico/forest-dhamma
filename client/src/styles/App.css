@@ -3,35 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('normalize.css');
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 /* ****************************************************
    Base Styles
  **************************************************** */
@@ -63,7 +34,7 @@ html, body,
 
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -79,6 +50,13 @@ html, body,
   margin-right: 3%;
   align-items: center;
   max-height: 80px;
+  max-width: 960px;
+}
+
+@media only screen and (min-width: 960px) {
+  .main-navigation {
+    margin: 0 auto;
+  }
 }
 
 .navigation-logo {
@@ -123,43 +101,11 @@ section {
    Landing Page
  ******************************************************************************************************** */
 
-.landing-page .App-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: url('../images/contact-banner-2x.jpg') no-repeat;
-  background-size: cover;
-}
-
-.App-header h1 {
-  font-size: 2.5rem;
-  font-weight: 100;
-}
-
-.landing-page {
-  display: flex;
-  flex-direction: column;
-}
-
-.landing-page--main {
-  display: flex;
-  flex-direction: column;
-}
-
-.landing-page--main section {
-  display: flex;
-  flex-direction: column;
-  min-height: 210px;
-  justify-content: center;
-  padding-left: 4%;
-  padding-right: 4%;
-}
-
-.landing-page--main section p,
-.App-header p,
+.landing-page--main p,
 small {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
+  max-width: 600px;
 }
 
 .footer {
@@ -169,29 +115,54 @@ small {
 }
 
 @media only screen and (min-width: 325px) {
-   .landing-page .App-header {
+   .intro-section--main {
      height: 250px;
    }
  }
 
  @media only screen and (min-width: 550px) {
-   .landing-page .App-header {
+   .intro-section--main {
      height: 450px;
    }
  }
 
 
 
+ /* ****************************************************
+    intro section
+  **************************************************** */
+
+ .intro-section--main {
+   background: url('../images/contact-banner-2x.jpg') no-repeat;
+   background-size: cover;
+
+ }
+
+ .intro-section--main h3 {
+   font-size: 2.5rem;
+   font-weight: 100;
+ }
+
+ .intro-section--main p {
+   font-size: 1.5rem;
+ }
+
+ .discovery-section--main,
+ .about-section--main,
+ .intro-section--main {
+   color: white;
+   display: flex;
+   justify-content: center;
+   padding: 4%;
+ }
+
+
 /* ****************************************************
-   About Page
+   About Section
  **************************************************** */
 
  .about-section--main {
    background-color: #F4BA81;
-   display: flex;
-   justify-content: center;
-   padding-top: 4%;
-   padding-bottom: 4%;
  }
 
 .about-section--main h3 {
@@ -219,10 +190,7 @@ small {
  **************************************************** */
 
 .discovery-section--main {
-  color: white;
   background-color: #B68B60;
-  padding-top: 4%;
-  padding-bottom: 4%;
 }
 
 .discovery-section--main h3 {

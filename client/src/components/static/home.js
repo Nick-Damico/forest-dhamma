@@ -7,14 +7,15 @@ import HeartIcon from '../../icons/heart.svg';
 const Home = () => {
   return (
     <div className="landing-page">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <h1 className="App-title">ForestDhamma</h1>
-        <p className="">
-          Listen and Share talks from Theravadin Buddhist tradition of Ajahn Chah
-        </p>
-      </header>
       <main className="landing-page--main">
+        <section className="intro-section--main">
+          <div className="wrapper">
+            <h3>Forest Dhamma</h3>
+            <p>
+              Listen and Share talks from Theravadin Buddhist tradition of Ajahn Chah
+            </p>
+          </div>
+        </section>
         <section className="about-section--main">
           <div className="wrapper">
             <h3>Share Talks</h3>
