@@ -81,7 +81,7 @@ html, body,
   font-size: .85rem;
 }
 
-.navigation-container li.selected {
+.navigation-container a.selected {
   border-bottom: 1px solid black;
   color: black;
 }
