@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchTeachers } from '../actions/teacherActions';
-import { addSelectedTalk, removeSelectedTalk } from '../actions/selectedTalkActions';
+import { fetchMonasteries } from '../actions/monasteryActions';
+import { addSelectedTalk } from '../actions/selectedTalkActions';
 import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/teachers/recentTalk';
@@ -10,8 +11,16 @@ import FavoriteTalk from '../components/teachers/favoriteTalk';
 import Footer from '../components/static/footer';
 
 class TeachersContainer extends Component {
+
   componentDidMount() {
-    this.props.fetchTeachers(this.props.match);
+    const { monasteries } = this.props.monasteries;
+    const { teachers } = this.props.teachers;
+    if ( teachers.length === 0 ) {
+      this.props.fetchTeachers(this.props.match);
+    }
+    if ( monasteries.length === 0 ) {
+      this.props.fetchMonasteries();
+    }
   }
 
   onHandleClick = (talk) => {
@@ -20,18 +29,24 @@ class TeachersContainer extends Component {
 
   render() {
     let teacherList, favoriteTalk, recentTalk;
-    const { loading } = this.props;
-    if ( loading ) {
+    if ( this.props.teachers.loading || this.props.monasteries.loading ) {
       return <h2>loading...</h2>
     }
 
-    const { teachers } = this.props;
-    let monastery = teachers[0].monastery
+    const { teachers }  = this.props.teachers;
+    const { monasteries } = this.props.monasteries;
+    const { monasteryId } = this.props.match.params;
+    // select monastery
+    const monastery = monasteries.find( monastery => monastery.id == monasteryId )
     if( teachers.length === 0 ) {
-      teacherList = <h3>Currently no dhamma talks available for { monastery.name }</h3>;
+      return (
+            <div className="teachers-container">
+                <TeachersHeader monastery={ monastery } />
+                <h2>Currently no dhamma talks available for { monastery.name }</h2>
+            </div>
+      )
     }
 
-    teacherList = <TeachersList onHandleClick={ this.onHandleClick } teachers={ teachers } />
     let talks = [].concat(...teachers.map(teacher => teacher.talks));
     // Set favorite talk from collection
     recentTalk = talks.sort((a,b) => {
@@ -46,6 +61,7 @@ class TeachersContainer extends Component {
     // set teacher as property on talks Array
     favoriteTalk.teacher = teachers.filter(teacher => teacher.id === favoriteTalk.teacher_id);
 
+    teacherList = <TeachersList onHandleClick={ this.onHandleClick } teachers={ teachers } />
     return (
       <div className="teachers-container">
         <TeachersHeader monastery={ monastery } />
@@ -63,14 +79,13 @@ class TeachersContainer extends Component {
 TeachersContainer.defaultProps = { loading: true };
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchTeachers, addSelectedTalk, removeSelectedTalk }, dispatch)
+  return bindActionCreators({ fetchTeachers, addSelectedTalk, fetchMonasteries }, dispatch)
 }
 
 function mapStateToProps(state) {
-  const { teachers, loading } = state.teachers;
   return {
-    teachers: teachers,
-    loading: loading
+    teachers: state.teachers,
+    monasteries: state.monasteries,
    }
 }
 
