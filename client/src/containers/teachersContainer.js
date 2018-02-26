@@ -9,6 +9,7 @@ import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/teachers/recentTalk';
 import FavoriteTalk from '../components/teachers/favoriteTalk';
 import Footer from '../components/static/footer';
+import { mostRecent } from '../helper';
 
 class TeachersContainer extends Component {
 
@@ -45,18 +46,16 @@ class TeachersContainer extends Component {
       )
     }
 
+    // Create Array on Objects using .concat and spread operator
     let talks = [].concat(...teachers.map(teacher => teacher.talks));
-    // Set favorite talk from collection
-    recentTalk = talks.sort((a,b) => {
-      let aDate = new Date(a.created_at);
-      let bDate = new Date(b.created_at);
-      return bDate - aDate;
-    })[0];
-    // set teacher as property on talks Array
+    // Set most recently uploaded talk from collection
+    recentTalk = mostRecent( talks );
+    // Set Teacher as property on recentTalk
     recentTalk.teacher = teachers.filter(teacher => teacher.id === recentTalk.teacher_id);
-    // store most favorited talk
+
+    // Set most favorited talk
     favoriteTalk = talks.sort((a,b) => b.favorites - a.favorites)[0];
-    // set teacher as property on talks Array
+    // Set teacher as property on favoriteTalk
     favoriteTalk.teacher = teachers.filter(teacher => teacher.id === favoriteTalk.teacher_id);
 
     teacherList = <TeachersList onHandleClick={ this.onHandleClick } teachers={ teachers } />
@@ -73,8 +72,6 @@ class TeachersContainer extends Component {
     )
   }
 }
-
-TeachersContainer.defaultProps = { loading: true };
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchTeachers, addSelectedTalk, fetchMonasteries }, dispatch)
