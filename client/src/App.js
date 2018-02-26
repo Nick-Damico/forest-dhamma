@@ -7,6 +7,7 @@ import TeachersContainer from './containers/teachersContainer';
 import TalkAudioPlayerContainer from './containers/talkAudioPlayerContainer';
 import UploadTalkContainer from './containers/uploadTalkContainer';
 import NavBar from './containers/navBar';
+import Footer from './components/static/footer';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/monasteries/:monasteryId" component={ TeachersContainer } />
           <Route exact path="/teachers/:teacherId" component={ TalkAudioPlayerContainer } />
           <Route exact path="/talks/upload" component={ UploadTalkContainer } />
+          <Footer />
         </div>
       </Router>
     );
