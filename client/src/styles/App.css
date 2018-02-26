@@ -320,6 +320,12 @@ small {
   padding-left: 3%;
 }
 
+@media only screen and (min-width: 750px) {
+  .teachers-header {
+    height: 250px;
+  }
+}
+
 .teachers-header--inner {
   position: relative;
   width: 100%;
@@ -393,6 +399,10 @@ small {
     flex-grow: 2;
     margin-left: 3%;
     height: 100%;
+  }
+
+  .teachers-list--item--details h4 {
+    margin-bottom: 1%;
   }
 
   .teachers-list--item--details p {
