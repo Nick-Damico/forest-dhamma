@@ -118,7 +118,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TalkAudioPlayerContainer);
-
-
-// todo: selecting a Most Favorited talk or Most Recent Talk needs to some way pass this info to this
-// Container render.

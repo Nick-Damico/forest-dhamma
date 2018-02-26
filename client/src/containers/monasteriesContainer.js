@@ -25,9 +25,9 @@ class MonasteryContainer extends Component {
         />
       )
     })
-    
+
     return(
-      <div className="monastery-container ">
+      <div className="monastery-container ">        
         {monasteryItems}
         <Footer />
       </div>
