@@ -14,10 +14,8 @@ class TeachersContainer extends Component {
 
   componentDidMount() {
     const { monasteries } = this.props.monasteries;
-    const { teachers } = this.props.teachers;
-    if ( teachers.length === 0 ) {
-      this.props.fetchTeachers(this.props.match);
-    }
+
+    this.props.fetchTeachers(this.props.match);
     if ( monasteries.length === 0 ) {
       this.props.fetchMonasteries();
     }
