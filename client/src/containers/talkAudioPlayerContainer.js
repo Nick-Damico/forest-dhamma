@@ -10,7 +10,6 @@ import TalkDescription from '../components/talks/talkDescription';
 import PlaylistNavbar from '../components/talks/playlistNavbar';
 import TalkTags from '../components/talks/talkTags';
 import AudioPlayer from '../components/talks/audioPlayer';
-import Footer from '../components/static/footer';
 
 class TalkAudioPlayerContainer extends Component {
   constructor() {
@@ -94,7 +93,6 @@ class TalkAudioPlayerContainer extends Component {
             : null
           }
         </div>
-        <Footer />
       </div>
     )
   }

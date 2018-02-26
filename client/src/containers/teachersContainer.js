@@ -8,7 +8,6 @@ import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/teachers/recentTalk';
 import FavoriteTalk from '../components/teachers/favoriteTalk';
-import Footer from '../components/static/footer';
 import { mostRecent } from '../helper';
 
 class TeachersContainer extends Component {
@@ -67,7 +66,6 @@ class TeachersContainer extends Component {
           <RecentTalk onHandleClick={ this.onHandleClick } talk={ recentTalk }/>
           <FavoriteTalk onHandleClick={ this.onHandleClick } talk={ favoriteTalk }/>
         </main>
-        <Footer />
       </div>
     )
   }

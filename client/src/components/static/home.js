@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './footer';
 import about from '../../icons/about.svg';
 import MonkIcon from '../../icons/monk-icon.svg';
 import HeartIcon from '../../icons/heart.svg';
@@ -40,7 +39,6 @@ const Home = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }

@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { fetchAllTeachers } from '../actions/teacherActions';
 import { uploadTalk } from '../actions/uploadActions';
 import { Link } from 'react-router-dom';
-import Footer from '../components/static/footer';
 
 class UploadTalkContainer extends Component {
   constructor() {
@@ -121,7 +120,6 @@ class UploadTalkContainer extends Component {
             <button className="upload-button" type="submit">Upload Talk</button>
         </form>
       </div>
-      <Footer />
     </div>
 
     )
