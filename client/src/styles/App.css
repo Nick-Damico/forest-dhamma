@@ -226,6 +226,18 @@ small {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 100%;
+}
+
+@media only screen and (min-width: 750px) {
+  .monastery-container {
+    margin: 0 auto;
+    max-width: 750px;
+  }
+
+  .monastery-container--item {
+    height: 300px;
+  }
 }
 
 .monastery-container--item {
@@ -234,6 +246,7 @@ small {
   justify-content: center;
   flex-direction: column;
   min-height: 215px;
+  width: 100%;
   margin-bottom: 2%;
 }
 
