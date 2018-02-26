@@ -26,7 +26,7 @@ class Api::V1::TalksController < ApiController
     if @talk.update(talk_params)
       render json: @talk, status: 200
     else
-      render json: { message: @talk.errors }, status: 400
+      render json: @talk, status: 404
     end
   end
 
@@ -40,7 +40,7 @@ class Api::V1::TalksController < ApiController
 
   private
     def talk_params
-      params.permit(:title, :description, :duration, :language, :teacher_id, :file_url, tags_attributes: [:name])
+      params.permit(:title, :description, :duration, :favorites, :language, :teacher_id, :file_url, tags_attributes: [:name])
     end
 
     def set_talk
