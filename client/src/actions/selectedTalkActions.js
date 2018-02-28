@@ -9,12 +9,6 @@ export function addSelectedTalk(talk) {
   };
 }
 
-export function removeSelectedTalk() {
-  return (dispatch) => {
-    dispatch({ type: REMOVE_SELECTED_TALK });
-  };
-}
-
 export function addTagToTalk(talk, tag) {
   return (dispatch) => {
     fetch(`${ ROOT_URL }/talks/${talk.id}?tags_attributes[0][name]=${tag}`, {

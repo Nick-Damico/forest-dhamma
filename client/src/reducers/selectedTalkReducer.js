@@ -4,8 +4,6 @@ function SelectedTalkReducer(state = null,action) {
   switch( action.type ) {
     case ADD_SELECTED_TALK:
       return action.payload;
-    case REMOVE_SELECTED_TALK:
-      return null;
     default:
       return state;
   }
