@@ -9,14 +9,8 @@ class MonasteryContainer extends Component {
     this.props.fetchMonasteries();
   }
 
-  render() {
-    const { monasteries, loading } = this.props;
-    let monasteryItems;
-
-    if ( loading ) {
-      return <h2>Loading...</h2>
-    }
-    monasteryItems = monasteries.map((monastery, index) => {
+  renderMonasteries = () => {
+    return this.props.monasteries.map((monastery, index) => {
       return (
         <MonasteryItem
           key={index}
@@ -24,10 +18,16 @@ class MonasteryContainer extends Component {
         />
       )
     })
+  }
+
+  render() {
+    if ( this.props.loading ) {
+      return <h2>Loading...</h2>
+    }
 
     return(
       <div className="monastery-container ">
-        {monasteryItems}
+        { this.renderMonasteries() }
       </div>
     )
   }
