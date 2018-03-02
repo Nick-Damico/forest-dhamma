@@ -21,8 +21,9 @@ class MonasteryContainer extends Component {
   }
 
   render() {
-    if ( this.props.loading ) {
-      return <h2>Loading...</h2>
+    const { monasteries, isLoading } = this.props;
+    if ( !this.props.monasteries.length && !this.props.isLoading ) {
+      return <h2>Loading</h2>;
     }
 
     return(
@@ -35,8 +36,8 @@ class MonasteryContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    monasteries: state.monasteries.monasteries,
-    loading: state.monasteries.loading
+    monasteries: state.monasteries.collection,
+    isLoading: state.monasteries.isLoading,
   }
 }
 

@@ -4,18 +4,20 @@ import {
 }  from '../actions/monasteryActions';
 
 function MonasteriesReducer(state = {
-monasteries: [],
-loading: true },
+  collection: [],
+  isLoading: false
+},
 action) {
   switch( action.type ) {
     case FETCH_MONASTERIES:
       return {
-        loading: true,
+        ...state,
+        isLoading: true,
       };
     case RECEIVED_MONASTERIES:
       return {
-        monasteries: action.payload,
-        loading: false
+        collection: action.payload,
+        isLoading: false
       }
     default:
       return state;
