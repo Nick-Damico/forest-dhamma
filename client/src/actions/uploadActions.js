@@ -1,7 +1,6 @@
 import { ADD_SELECTED_TALK } from './selectedTalkActions';
 const ROOT_URL = process.env.REACT_APP_API_URL;
 
-
 export function uploadTalk(data) {
   return (dispatch) => {
     fetch(`${ROOT_URL}/talks`, {
