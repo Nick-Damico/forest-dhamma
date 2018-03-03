@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchAllTeachers } from '../actions/teacherActions';
+import { fetchTeachers } from '../actions/teacherActions';
 import { uploadTalk } from '../actions/uploadActions';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ class UploadTalkContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllTeachers();
+    this.props.fetchTeachers();
   }
 
   onHandleSubmit = (e) => {
@@ -138,7 +138,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetchAllTeachers, uploadTalk }, dispatch);
+  return bindActionCreators({ fetchTeachers, uploadTalk }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadTalkContainer);
