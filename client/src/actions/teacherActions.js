@@ -6,19 +6,7 @@ export const RECEIVED_TEACHERS = 'RECEIVED_TEACHERS';
 export const RECEIVED_TEACHERS_FROM_MONASTERY = 'RECEIVED_TEACHERS_FROM_MONASTERY';
 const ROOT_URL = process.env.REACT_APP_API_URL;
 
-// 'ROOT_URL/monasteries/:id'
-export function fetchTeachers({ url }) {
-  return (dispatch) => {
-    dispatch({ type: FETCH_TEACHERS });
-    fetch(`${ROOT_URL}${url}`)
-      .then(response => response.json())
-      .then(json => {
-        dispatch({ type:RECEIVED_TEACHERS_FROM_MONASTERY, payload: json.monastery })
-      })
-  };
-}
-
-export function fetchAllTeachers() {
+export function fetchTeachers() {
   return (dispatch) => {
     dispatch({ type: FETCH_TEACHERS });
     fetch(`${ROOT_URL}/teachers`)
@@ -26,3 +14,15 @@ export function fetchAllTeachers() {
         .then(json => dispatch({ type: RECEIVED_TEACHERS, payload: json.teachers }))
   }
 }
+
+// // 'ROOT_URL/monasteries/:id'
+// export function fetchTeachers({ url }) {
+//   return (dispatch) => {
+//     dispatch({ type: FETCH_TEACHERS });
+//     fetch(`${ROOT_URL}${url}`)
+//       .then(response => response.json())
+//       .then(json => {
+//         dispatch({ type:RECEIVED_TEACHERS_FROM_MONASTERY, payload: json.monastery })
+//       })
+//   };
+// }
