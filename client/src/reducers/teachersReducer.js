@@ -1,19 +1,16 @@
 import { FETCH_TEACHERS,
-         RECEIVED_TEACHERS,
-         RECEIVED_TEACHERS_FROM_MONASTERY
+         RECEIVED_TEACHERS
        } from '../actions/teacherActions';
 
 function TeachersReducer(state = {
-  teachers: [],
-  loading: true,
+  collection: [],
+  isLoading: true,
 },action) {
   switch(action.type) {
     case FETCH_TEACHERS:
-      return { ...state, loading: true };
-    case RECEIVED_TEACHERS_FROM_MONASTERY:
-      return { teachers: action.payload.teachers, monastery: action.payload.name, loading: false};
+      return { ...state, isLoading: true };
     case RECEIVED_TEACHERS:
-      return { teachers: action.payload, loading: false };
+      return { collection: action.payload, isLoading: false };
     default:
       return state;
   }
