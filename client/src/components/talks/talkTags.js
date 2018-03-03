@@ -2,12 +2,19 @@ import React from 'react';
 import TagItem from './tagItem';
 
 const TalkTags = ({ talk, onHandleChange, onHandleSubmit, tagText }) => {
-  const talkTags = talk.tags.map((tag, index) => <TagItem key={ index } tag={ tag } />);
+
+  let tagsList;
+  if ( !talk.tags ) {
+    tagsList = <h4>Currently no tags.</h4>
+  } else {
+    tagsList= talk.tags.map((tag, index) => <TagItem key={ index } tag={ tag } />);
+  }
+
   return (
       <div className="tags-container">
           <h5>Tags</h5>
           <div className="tags-container--items">
-            { talkTags }
+            { tagsList }
           </div>
           <div style={ { marginBottom: 10}}>
             <form onSubmit={ onHandleSubmit }>
