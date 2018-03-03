@@ -22,7 +22,7 @@ class MonasteryContainer extends Component {
 
   render() {
     const { monasteries, isLoading } = this.props;
-    if ( !this.props.monasteries.length && !this.props.isLoading ) {
+    if ( !monasteries.length && !isLoading ) {
       return <h2>Loading</h2>;
     }
 
