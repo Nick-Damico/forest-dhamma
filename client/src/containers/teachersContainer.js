@@ -10,6 +10,11 @@ import FavoriteTalk from '../components/teachers/favoriteTalk';
 import { mostRecent } from '../helper';
 
 class TeachersContainer extends Component {
+  constructor() {
+    super();
+
+    this.onHandleClick = this.onHandleClick.bind(this);
+  }
   // Lifecycle Methods
   componentDidMount() {
     const { monasteries } = this.props;
