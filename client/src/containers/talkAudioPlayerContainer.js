@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchSelectedTeacher } from '../actions/selectedTeacherActions';
+
+import { fetchTeachers } from '../actions/teacherActions';
 import { addSelectedTalk } from '../actions/selectedTalkActions';
 import { addTagToTalk } from '../actions/selectedTalkActions';
+
 import TalksHeader from '../components/talks/talksHeader';
 import TalksPlaylist from '../components/talks/talksPlaylist';
 import TalkDescription from '../components/talks/talkDescription';
@@ -23,11 +25,19 @@ class TalkAudioPlayerContainer extends Component {
       tagText: ''
     }
   }
-
+  // Lifecycle Methods
   componentDidMount = () => {
-    this.props.fetchSelectedTeacher( this.props.match );
+    this.props.fetchTeachers();
   }
 
+  // Helper Methods
+  selectedTeacher = () => {
+    const { teachers } = this.props;
+    const { teacherId } = this.props.match.params;
+    return teachers.filter(t => t.id == teacherId)[0];
+  }
+
+  // Event Handlers
   onHandleClick = (talk) => {
     this.props.addSelectedTalk( talk );
   }
@@ -57,24 +67,26 @@ class TalkAudioPlayerContainer extends Component {
   }
 
   render() {
-    const { loading, teacher } = this.props;
-    if ( loading ) {
+    const { isLoading } = this.props;
+    if ( isLoading ) {
       return <h2>Loading...</h2>;
     }
-    const { monastery, talks } = teacher;
-    const talk = this.props.selectedTalk || teacher.talks[0];
+
+    const selectedTeacher = this.selectedTeacher();
+    const { monastery, talks } = selectedTeacher;
+    const talk = this.props.selectedTalk || talks[0];
 
     return (
       <div className="audioplayer-container">
-        <TalksHeader monastery={ monastery } teacher={ teacher } />
-        <AudioPlayer talk={ talk } teacher={ teacher } />
+        <TalksHeader monastery={ monastery } teacher={ selectedTeacher } />
+        <AudioPlayer talk={ talk } teacher={ selectedTeacher } />
         <div className="playlist-container">
           <PlaylistNavbar onHandleClick={this.onComponentChange} />
 
           { this.state.showPlaylist
             ? <TalksPlaylist
                 talks={ talks }
-                teacher={ teacher }
+                teacher={ selectedTeacher }
                 onHandleClick={this.onHandleClick}
               /> : null
           }
@@ -98,19 +110,17 @@ class TalkAudioPlayerContainer extends Component {
   }
 }
 
-TalkAudioPlayerContainer.defaultProps = { loading: true, teacher: '' };
-
 function mapStateToProps(state) {
   return {
-    teacher: state.selectedTeacher.teacher,
-    loading: state.selectedTeacher.loading,
+    teachers: state.teachers.collection,
+    isLoading: state.teachers.isLoading,
     selectedTalk: state.selectedTalk,
    }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    fetchSelectedTeacher,
+    fetchTeachers,
     addSelectedTalk,
     addTagToTalk }, dispatch);
 }
