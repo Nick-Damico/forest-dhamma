@@ -5,7 +5,7 @@ import {shorten} from '../../helper';
 
 const FavoriteTalk = ({ talk, onHandleClick }) => {
   const { title, favorites, teacher } = talk;
-  const { name, profile_img, id } = teacher[0];
+  const { name, profile_img, id } = teacher;
   return(
     <div>
         <h3 className="teachers-list--title">Favorite Talk</h3>

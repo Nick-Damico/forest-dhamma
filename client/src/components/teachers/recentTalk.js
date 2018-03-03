@@ -5,7 +5,7 @@ import { shorten } from '../../helper';
 
 const RecentTalk = ({ talk, onHandleClick }) => {
   const { title, created_at, teacher } = talk;
-  const { name, profile_img, id } = teacher[0];
+  const { name, profile_img, id } = teacher;
   return(
     <div>
       <h3 className="teachers-list--title">Recent Talk</h3>
