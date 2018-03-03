@@ -1,4 +1,4 @@
-import { ADD_SELECTED_TALK, REMOVE_SELECTED_TALK }  from '../actions/selectedTalkActions';
+import { ADD_SELECTED_TALK }  from '../actions/selectedTalkActions';
 
 function SelectedTalkReducer(state = null,action) {
   switch( action.type ) {
