@@ -19,6 +19,20 @@ class UploadTalkContainer extends Component {
     }
   }
 
+  getNewTalkMonastery = ( talk ) => {
+    return this.props.teachers.filter(teacher => teacher.id === talk.talk.teacher_id)[0].monastery;
+  }
+
+  successfulUploadMsg = ( talk ) => {
+    const monastery = this.getNewTalkMonastery( talk );
+    return (
+      <div>
+        <h3>Upload Successful</h3>
+        <Link to={`/monasteries/${monastery.id}`}>Go to Monastery</Link>
+      </div>
+    )
+  }
+
   componentDidMount() {
     this.props.fetchTeachers();
   }
@@ -37,22 +51,16 @@ class UploadTalkContainer extends Component {
 
   render() {
     let errorMsg = null;
-    const { loading } = this.props;
-    if ( loading ) {
+    const { isLoading } = this.props;
+
+    if ( isLoading ) {
       return <h2>Loading...</h2>
     }
 
     const { teachers, talk } = this.props;
     if ( talk && talk.status === "success" ) {
-      const monastery = teachers.filter(teacher => teacher.id === talk.talk.teacher_id)[0].monastery;
-      return (
-        <div>
-          <h3>Upload Successful</h3>
-          <Link to={`/monasteries/${monastery.id}`}>Go to Monastery</Link>
-        </div>
-      )
+      return this.successfulUploadMsg(talk);
     }
-
     if ( talk && talk.status === "error" ) {
       errorMsg = <h3>Error: {JSON.stringify(talk.message)} </h3>;
     }
@@ -129,10 +137,10 @@ class UploadTalkContainer extends Component {
 UploadTalkContainer.defaultProps = { loading: true };
 
 const mapStateToProps = (state) => {
-  const { teachers, loading } = state.teachers;
+  const { collection, isLoading } = state.teachers;
   return {
-    teachers: teachers,
-    loading: loading,
+    teachers: collection,
+    isLoading: isLoading,
     talk: state.selectedTalk
   }
 }
