@@ -6,7 +6,7 @@ import MonasteryList from './containers/monasteriesContainer';
 import TeachersContainer from './containers/teachersContainer';
 import TalkAudioPlayerContainer from './containers/talkAudioPlayerContainer';
 import UploadTalkContainer from './containers/uploadTalkContainer';
-import NavBar from './containers/navBar';
+import NavBar from './components/static/navBar';
 import Footer from './components/static/footer';
 
 class App extends Component {
