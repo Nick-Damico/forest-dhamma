@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { fetchTeachers } from '../actions/teacherActions';
 import { uploadTalk } from '../actions/uploadActions';
+
 import { Link } from 'react-router-dom';
 
 class UploadTalkContainer extends Component {
@@ -133,8 +135,6 @@ class UploadTalkContainer extends Component {
     )
   }
 }
-
-UploadTalkContainer.defaultProps = { loading: true };
 
 const mapStateToProps = (state) => {
   const { collection, isLoading } = state.teachers;
