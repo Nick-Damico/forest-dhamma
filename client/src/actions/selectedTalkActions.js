@@ -11,7 +11,7 @@ export function addSelectedTalk(talk) {
 
 export function addTagToTalk(talk, tag) {
   return (dispatch) => {
-    fetch(`${ ROOT_URL }/talks/${talk.id}?tags_attributes[0][name]=${tag}`, {
+    fetch(`${ ROOT_URL }/talks/${talk.id}?tags_attributes[0][name]=${tag.toLowerCase()}`, {
       method: 'PATCH',
       headers: new Headers({
         'Content-Type': 'application/json'
