@@ -25,7 +25,8 @@ p {
 html, body,
 .landing-page--main,
 .audioplayer-container,
-.upload-container {
+.upload-container,
+.api-documentation--body {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -709,4 +710,53 @@ select {
   color: white;
   border: 3px solid #60a76f;
   margin-top: 2%;
+}
+
+
+
+/* *******************************
+ API Section
+******************************* */
+
+.api-header {
+  background: black;
+  padding-left: 4%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.api-header > h2 {
+  color: white;
+  font-weight: 100;
+}
+
+.api-documentation--body h3 {
+  border-bottom: 1px solid black;
+  padding-bottom: 1%;
+}
+
+.api-documentation--body {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.api-documentation--body a {
+  color: #e0590b;
+}
+.api-documentation--body section {
+  flex: 0;
+}
+
+.api-documentation--body pre {
+    padding: 2%;
+    max-height: 300px;
+    overflow-y: scroll;
+    white-space: pre-wrap;
+    font-size: 12px;
+    background-color: #e9f7e8;
+    border-radius: 0;
+}
+
+ .api-documentation--body i {
+  color: #1ba939;
 }
