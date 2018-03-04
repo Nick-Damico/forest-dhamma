@@ -35,7 +35,7 @@ class TeachersContainer extends Component {
 
   selectMonastery = () => {
     const { monasteryId } = this.props.match.params;
-    return this.props.monasteries.filter(m => m.id == monasteryId)[0]
+    return this.props.monasteries.filter(m => m.id === parseInt(monasteryId,10))[0]
   }
 
   getFavoriteTalk = ( talks ) => {

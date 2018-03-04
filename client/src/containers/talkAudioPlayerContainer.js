@@ -34,7 +34,7 @@ class TalkAudioPlayerContainer extends Component {
   selectedTeacher = () => {
     const { teachers } = this.props;
     const { teacherId } = this.props.match.params;
-    return teachers.filter(t => t.id == teacherId)[0];
+    return teachers.filter (t => t.id === parseInt(teacherId, 10))[0];
   }
 
   // Event Handlers
