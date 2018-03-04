@@ -190,19 +190,19 @@ ajahn_khemasiri = Teacher.create(
 ############################################################################################################################################################
 # Tags
 ############################################################################################################################################################
-suffering = Tag.create(name: 'Suffering')
-right_effort = Tag.create(name: 'Right Effort')
-forest_tradition = Tag.create(name: 'Thai Forest Tradition')
-patience = Tag.create(name: 'Patience')
-determination = Tag.create(name: 'Determination')
-spiritual_friendship = Tag.create(name: 'Spiritual Friendship')
-practicing_dhamma = Tag.create(name: 'Practicing Dhamma')
-faith = Tag.create(name: 'Faith')
-trust = Tag.create(name: 'Trust')
-tradition = Tag.create(name: 'Tradition')
-understanding = Tag.create(name: 'Understanding')
-four_noble_truths = Tag.create(name: 'Four Noble Truths')
-autobiography = Tag.create(name: 'Autobiography')
+suffering = Tag.create(name: 'suffering')
+right_effort = Tag.create(name: 'right effort')
+forest_tradition = Tag.create(name: 'thai forest tradition')
+patience = Tag.create(name: 'patience')
+determination = Tag.create(name: 'determination')
+spiritual_friendship = Tag.create(name: 'spiritual friendship')
+practicing_dhamma = Tag.create(name: 'practicing dhamma')
+faith = Tag.create(name: 'faith')
+trust = Tag.create(name: 'trust')
+tradition = Tag.create(name: 'tradition')
+understanding = Tag.create(name: 'understanding')
+four_noble_truths = Tag.create(name: 'four noble truths')
+autobiography = Tag.create(name: 'autobiography')
 
 
 
