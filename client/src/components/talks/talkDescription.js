@@ -6,7 +6,7 @@ const TalkDescription = ({ talk, onHandleClick }) => {
     return <h5>No Description available</h5>
   }
   return (
-    <div>
+    <div className="description-container">
       <h5>Description</h5>
       { description }
     </div>
