@@ -26,11 +26,15 @@ class UploadTalkContainer extends Component {
   }
 
   successfulUploadMsg = ( talk ) => {
-    const monastery = this.getNewTalkMonastery( talk );
+    const { teacher_id } = talk.talk;
+
     return (
-      <div>
+      <div className="success-div">
         <h3>Upload Successful</h3>
-        <Link to={`/monasteries/${monastery.id}`}>Go to Monastery</Link>
+        <div className="success-div__msg">
+            &#x2714;
+        </div>
+        <Link to={`/teachers/${teacher_id}`}>Go to Teachers page</Link>
       </div>
     )
   }
