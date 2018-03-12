@@ -56,7 +56,7 @@ const Api = () => {
 
           <p>
             Using the base URL from <a href="#base-url">above</a>. We will make a
-            <b>index</b> request for all monasteries in the database by appending <i>/monasteries </i>
+            <b> index</b> request for all monasteries in the database by appending <i>/monasteries </i>
             to the <i>base URL</i>.
           </p>
 
