@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchMonasteries } from '../actions/monasteryActions';
+
 import MonasteryItem from '../components/monasteries/monasteryItem';
 
 class MonasteryContainer extends Component {
