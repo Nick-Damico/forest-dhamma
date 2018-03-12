@@ -3,10 +3,10 @@ import TagItem from './tagItem';
 
 const TalkTags = ({ talk, onHandleChange, onHandleSubmit, tagText }) => {
   let tagsList;
-  if ( !talk.tags.length ) {
-    tagsList = <h4>Currently no tags.</h4>
-  } else {
+  if ( talk.tags) {
     tagsList= talk.tags.map((tag, index) => <TagItem key={ index } tag={ tag } />);
+  } else {
+    tagsList = <h4>Currently no tags.</h4>
   }
 
   return (
