@@ -92,6 +92,7 @@ section {
 }
 
 .footer {
+  background-color: #d4cda3;
   flex-shrink: 0;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -588,6 +589,10 @@ small {
   margin-bottom: 4%;
 }
 
+.tags-container--items span {
+    display: inline-block;
+    margin-bottom: 5px;
+}
 
 /* *******************************
  Description container

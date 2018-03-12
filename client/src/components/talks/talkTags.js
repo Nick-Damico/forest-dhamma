@@ -2,9 +2,8 @@ import React from 'react';
 import TagItem from './tagItem';
 
 const TalkTags = ({ talk, onHandleChange, onHandleSubmit, tagText }) => {
-
   let tagsList;
-  if ( !talk.tags ) {
+  if ( !talk.tags.length ) {
     tagsList = <h4>Currently no tags.</h4>
   } else {
     tagsList= talk.tags.map((tag, index) => <TagItem key={ index } tag={ tag } />);
