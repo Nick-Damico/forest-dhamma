@@ -11,7 +11,7 @@ const Home = () => {
           <div className="wrapper">
             <h3>Forest Dhamma</h3>
             <p>
-              Listen and Share talks from Theravadin Buddhist tradition of Ajahn Chah
+              Listen and Share talks from Theravada Buddhist tradition of Ajahn Chah
             </p>
           </div>
         </section>
