@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { fetchMonasteries } from '../actions/monasteryActions';
 import { addSelectedTalk } from '../actions/selectedTalkActions';
+import { mostRecent } from '../helper';
+
 import TeachersHeader from '../components/teachers/teachersHeader';
 import TeachersList from '../components/teachers/teachersList';
 import RecentTalk from '../components/teachers/recentTalk';
 import FavoriteTalk from '../components/teachers/favoriteTalk';
-import { mostRecent } from '../helper';
+
 
 class TeachersContainer extends Component {
   constructor() {
@@ -88,7 +92,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     monasteries: state.monasteries.collection,
-    isLoading: state.monasteries.isLoading,
+    isLoading: state.monasteries.isLoading
    }
 }
 
