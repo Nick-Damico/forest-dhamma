@@ -7,24 +7,30 @@ import { fetchMonasteries } from '../actions/monasteryActions';
 import MonasteryItem from '../components/monasteries/monasteryItem';
 
 class MonasteryContainer extends Component {
-  constructor() {
-    super()
 
-  }
   componentDidMount = () => {
     this.props.fetchMonasteries();
-
   }
 
   renderMonasteries = () => {
-    return this.props.monasteries.map((monastery, index) => {
+    const sortedArr = this.props.monasteries.sort((a,b) => {
+      const valA = a.name.split(' ')[0].toLowerCase();
+      const valB = b.name.split(' ')[0].toLowerCase();
+      let comparison = 0;
+      if (valA > valB) {
+        comparison = 1;
+      } else if (valA < valB) {
+        comparison = -1;
+      }
+      return comparison;
+    });
+    
+    return sortedArr.map((monastery, index) => {
       return (
-        <div>
           <MonasteryItem
             key={index}
             monastery={monastery}
           />
-        </div>
       )
     })
   }
