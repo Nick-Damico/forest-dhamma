@@ -293,6 +293,45 @@ small {
   font-size: 1.2rem;
 }
 
+.monastery-item__like-btn {
+  background-image: url(/static/media/heart.3a4c1a99.svg);
+  background-position-y: 1px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  border: 0;
+  background-color: transparent;
+  margin-right: -28px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  outline: none;
+}
+
+.monastery-item__like-btn::after {
+  content: url('../icons/heart.svg');
+  /* background: blue; */
+  display:block;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  z-index: 1;
+  top: 1px;
+  left: 0;
+  outline: none;
+}
+
+.animate-heart::after {
+  animation: rise-disappear .8s linear;
+}
+
+@keyframes rise-disappear {
+  0%    {}
+  65%   { top: -18px; opacity: .8; transform: scale(1.2) }
+  100%  { top: -24px; opacity: 0;  transform: scale(1.8) }
+}
+
 
 
 /* ********************************************************************************************************
