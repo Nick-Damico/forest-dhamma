@@ -14,11 +14,10 @@ class Api::V1::MonasteriesController < ApiController
   end
 
   def update
-    binding.pry
     if @monastery.update(monastery_params)
-      render json: { status: "success", monastery: @monastery }, status: 200
+      render json: @monastery, status: 200
     else
-      render json: { status: "error", message: @monastery.errors }, status: 400
+      render json: @monastery.errors, status: 400
     end
   end
 
