@@ -99,7 +99,6 @@ class UploadTalkContainer extends Component {
                      placeholder="Title"
                      onChange={(e) => this.setState({ title: e.target.value })}
                      value={ this.state.title }
-                     required
               />
             </div>
 

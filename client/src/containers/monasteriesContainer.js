@@ -7,17 +7,24 @@ import { fetchMonasteries } from '../actions/monasteryActions';
 import MonasteryItem from '../components/monasteries/monasteryItem';
 
 class MonasteryContainer extends Component {
+  constructor() {
+    super()
+
+  }
   componentDidMount = () => {
     this.props.fetchMonasteries();
+
   }
 
   renderMonasteries = () => {
     return this.props.monasteries.map((monastery, index) => {
       return (
-        <MonasteryItem
-          key={index}
-          monastery={monastery}
-        />
+        <div>
+          <MonasteryItem
+            key={index}
+            monastery={monastery}
+          />
+        </div>
       )
     })
   }
