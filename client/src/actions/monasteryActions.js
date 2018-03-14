@@ -25,6 +25,7 @@ export function updateMonastery(monastery, numlikes) {
           'Content-Type': 'application/json'
         })
       })
+    .catch(error => console.error(error))  
     .then(response => response.json())
     .then(json => {
       dispatch({ type: UPDATE_MONASTERY, payload: json.monastery })
