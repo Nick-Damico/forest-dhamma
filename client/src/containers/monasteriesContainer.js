@@ -12,8 +12,8 @@ class MonasteryContainer extends Component {
     this.props.fetchMonasteries();
   }
 
-  renderMonasteries = () => {
-    const sortedArr = this.props.monasteries.sort((a,b) => {
+  sortMonasteries = () => {
+    return this.props.monasteries.sort((a,b) => {
       const valA = a.name.split(' ')[0].toLowerCase();
       const valB = b.name.split(' ')[0].toLowerCase();
       let comparison = 0;
@@ -24,7 +24,10 @@ class MonasteryContainer extends Component {
       }
       return comparison;
     });
-    
+  }
+
+  renderMonasteries = () => {
+    const sortedArr = this.sortMonasteries();
     return sortedArr.map((monastery, index) => {
       return (
           <MonasteryItem
