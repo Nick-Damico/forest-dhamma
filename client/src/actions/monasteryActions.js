@@ -5,6 +5,7 @@ export const RECEIVED_MONASTERIES = 'RECEIVED_MONASTERIES';
 export const UPDATE_MONASTERY = 'UPDATE_MONASTERY';
 const ROOT_URL = process.env.REACT_APP_API_URL;
 
+console.log(ROOT_URL);
 // 'ROOT_URL/monasteries'
 export function fetchMonasteries() {
   return (dispatch) => {
@@ -25,7 +26,7 @@ export function updateMonastery(monastery, numlikes) {
           'Content-Type': 'application/json'
         })
       })
-    .catch(error => console.error(error))  
+    .catch(error => console.error(error))
     .then(response => response.json())
     .then(json => {
       dispatch({ type: UPDATE_MONASTERY, payload: json.monastery })
