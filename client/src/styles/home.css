@@ -1,0 +1,193 @@
+@import url('normalize.css');
+
+/* Base Styles */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* body {
+	font-family: Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Cabin", Arial, sans-serif;
+  font-weight: normal;
+  color: #C80060;
+  margin-top: 0;
+} */
+
+img {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+/* Grid Styles */
+
+.wrapper {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 1 auto;
+}
+
+[class*="col-"] {
+  flex: 0 0 92%;
+  margin: 0 4%;
+}
+
+.col-reset {
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 0 4%;
+}
+
+.center__center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section Styles */
+
+/* Intro Section */
+
+.intro-section {
+  margin-top: 10px;
+}
+
+.intro__image {
+  margin-bottom: -4px;
+}
+
+
+
+/* Find Section */
+
+.find-section {
+  background-color: #f5a70f;
+}
+
+.find-section__col--1 {
+  background: url('../images/forest-monk@3x.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+
+  flex-direction: column;
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 0 4%;
+  min-height: 300px;
+}
+
+.find__icon,
+.upload__icon,
+.headphone__icon {
+  width: 50px;
+}
+
+.find-section__col--2 {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+
+/* Share Section */
+
+.share__col--1 {
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.share__col--2 {
+  align-items: center;
+  justify-content: center;
+
+  background: url('../images/pattern.svg') no-repeat;
+  background-position: center;
+  background-size: 200%;
+  position: relative;
+}
+
+.share__col--2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255,255,255,.6);
+  z-index: 1;
+}
+.share__image {
+  width: initial;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* Share Section */
+
+.listen__col--1 {
+  background: url('../images/relax@2x.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  flex-direction: column;
+  min-height: 300px;
+}
+
+
+/* Media Queries */
+@media (min-width: 400px) {
+  .find__image {
+    max-width: 280px;
+    max-height:280px;
+  }
+
+  .find__text,
+  .share__text,
+  .listen__text {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 599px) {
+  .navigation-container {
+    width: 100%;
+  }
+
+  .order__col--first {
+    order: -1;
+  }
+
+  .wrapper {
+      width: 100%;
+      max-width: 960px;
+  }
+
+  [class*='col-'] {
+    margin-left: 4%;
+    margin-right: 0%;
+  }
+
+  .col-md-6 {
+    flex: 0 0 44%;
+  }
+
+
+
+}
