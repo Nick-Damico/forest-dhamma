@@ -10,6 +10,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -61,31 +62,22 @@ img {
 
 /* Typography */
 
-.intro__title,
-.share__title,
-.find__title,
-.listen__title {
+.intro__title, .share__title, .find__title, .listen__title {
   font-family: 'Montserrat', Arial, sans-serif;
   color: #d82b3d;
   font-size: 1.625em;
   font-weight: 600;
 }
 
-.intro__text,
-.find__text,
-.share__text,
-.listen__text {
+.intro__text, .find__text, .share__text, .listen__text {
   font-family: 'Raleway', Arial, sans-serif;
   line-height: 1.4em;
   letter-spacing: 1px;
 }
 
-
-
 /* Icons */
 
-.find__icon,
-.upload__icon {
+.find__icon, .upload__icon {
   width: 50px;
 }
 
@@ -93,8 +85,6 @@ img {
   width: 80px;
   margin-bottom: -19px;
 }
-
-
 
 /* Intro Section */
 
@@ -105,8 +95,6 @@ img {
 .intro__image {
   margin-bottom: -4px;
 }
-
-
 
 /* Find Section */
 
@@ -119,7 +107,6 @@ img {
   background-position: center;
   background-size: cover;
   justify-content: center;
-
   flex-direction: column;
   flex: 0 0 100%;
   margin: 0;
@@ -131,7 +118,6 @@ img {
   padding-top: 4%;
   padding-bottom: 4%;
 }
-
 
 /* Share Section */
 
@@ -150,8 +136,7 @@ img {
   align-items: center;
 }
 
-.share__col--2 {
-}
+.share__col--2 {}
 
 .share__image {
   width: initial;
@@ -159,15 +144,12 @@ img {
   z-index: 2;
 }
 
-
-
 /* Share Section */
 
 .listen__col--1 {
   background: url('../images/relax@2x.png') no-repeat;
   background-position: center;
   background-size: cover;
-
   flex-direction: column;
   min-height: 300px;
 }
@@ -178,18 +160,14 @@ img {
   background-size: cover;
 }
 
-
 /* Media Queries */
+
 @media (min-width: 400px) {
   .find__image {
     max-width: 280px;
-    max-height:280px;
+    max-height: 280px;
   }
-
-  .intro__text,
-  .find__text,
-  .share__text,
-  .listen__text {
+  .intro__text, .find__text, .share__text, .listen__text {
     max-width: 350px;
   }
 }
@@ -198,39 +176,29 @@ img {
   .navigation-container {
     width: 100%;
   }
-
   .order__col--first {
     order: -1;
   }
-
   .wrapper {
-      width: 100%;
-      max-width: 960px;
+    width: 100%;
+    max-width: 960px;
   }
-
   [class*='col-'] {
     margin-left: 0% !important;
     margin-right: 0%;
   }
-
   .col-md-6 {
     flex: 0 0 50%;
   }
-
-  .share,
-  .find-section,
-  .listen-section {
+  .share, .find-section, .listen-section {
     min-height: 500px;
   }
-
   .share {
     min-height: 600px;
   }
-
   .intro__col--1 {
     padding-left: 4%;
   }
-
   .share__image {
     max-width: 260px;
   }
