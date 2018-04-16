@@ -104,6 +104,14 @@ img {
 
 /* Share Section */
 
+.share {
+  background: url('../images/pattern.svg') no-repeat;
+  background-position: center;
+  background-position: -50%;
+  background-size: 75%;
+  position: relative;
+}
+
 .share__col--1 {
   flex-direction: column;
   min-height: 300px;
@@ -112,25 +120,8 @@ img {
 }
 
 .share__col--2 {
-  align-items: center;
-  justify-content: center;
-
-  background: url('../images/pattern.svg') no-repeat;
-  background-position: center;
-  background-size: 200%;
-  position: relative;
 }
 
-.share__col--2::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(255,255,255,.6);
-  z-index: 1;
-}
 .share__image {
   width: initial;
   position: relative;
@@ -195,8 +186,9 @@ img {
     flex: 0 0 50%;
   }
 
+  .share,
   .find-section,
-  .listen {
+  .listen-section {
     min-height: 500px;
   }
 

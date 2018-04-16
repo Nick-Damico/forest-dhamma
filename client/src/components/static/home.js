@@ -47,7 +47,7 @@ const Home = () => {
             diam. Sed arcu. Cras consequat.
           </p>
         </div>
-        <div className="col-xs-12 col-md-6 share__col--2 order__col--first col-reset flex">
+        <div className="col-xs-12 col-md-6 share__col--2 center__center order__col--first col-reset flex">
           <img src={require('../../images/upload@2x.png')} alt="" className="share__image"/>
         </div>
       </section>
