@@ -624,14 +624,19 @@ small {
 
 @media only screen and (min-width: 420px) {
    .playlist-container {
-     max-width: 1200px;
+     max-width: 960px;
      margin: 0 auto;
    }
+
+  .playlist-container {
+    width: 100%;
+  }
 
    .audioplayer-container-header {
      min-height: 400px;
      margin-bottom: 5em;
    }
+
    .audioplayer-container-header--img {
      top: 76%;
    }
