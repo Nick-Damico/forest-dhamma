@@ -1,5 +1,10 @@
-@import url('normalize.css');
+/*
+   Stylesheet for the landing page only, styles for App pages located in
+   ./App.css
+*/
 
+@import url('normalize.css');
+@import url('fonts.css');
 /* Base Styles */
 
 html {
@@ -14,12 +19,7 @@ html {
 	margin: 0px;
 	padding: 0px;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Cabin", Arial, sans-serif;
-  font-weight: normal;
-  color: #C80060;
-  margin-top: 0;
-} */
+*/
 
 img {
   width: 100%;
@@ -59,6 +59,43 @@ img {
 
 /* Section Styles */
 
+/* Typography */
+
+.intro__title,
+.share__title,
+.find__title,
+.listen__title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #d82b3d;
+  font-size: 1.625em;
+  font-weight: 600;
+}
+
+.intro__text,
+.find__text,
+.share__text,
+.listen__text {
+  font-family: 'Raleway', Arial, sans-serif;
+  line-height: 1.4em;
+  letter-spacing: 1px;
+}
+
+
+
+/* Icons */
+
+.find__icon,
+.upload__icon {
+  width: 50px;
+}
+
+.headphone__icon {
+  width: 80px;
+  margin-bottom: -19px;
+}
+
+
+
 /* Intro Section */
 
 .intro-section {
@@ -88,12 +125,6 @@ img {
   margin: 0;
   padding: 0 4%;
   min-height: 300px;
-}
-
-.find__icon,
-.upload__icon,
-.headphone__icon {
-  width: 50px;
 }
 
 .find-section__col--2 {
@@ -163,7 +194,7 @@ img {
   }
 }
 
-@media (min-width: 599px) {
+@media (min-width: 604px) {
   .navigation-container {
     width: 100%;
   }

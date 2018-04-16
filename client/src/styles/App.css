@@ -1,7 +1,8 @@
 /* Google/fonts imports */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('normalize.css');
+@import url('fonts.css');
+
+
 
 /* ****************************************************
    Base Styles
