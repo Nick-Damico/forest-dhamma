@@ -520,7 +520,7 @@ small {
   height: 220px;
   z-index: 1;
   padding-bottom: 36px;
-  margin-bottom: 20%;
+  margin-bottom: 26%;
  }
 
  .audioplayer-container-header::after {
@@ -566,8 +566,10 @@ small {
   .audioplayer-header h2 {
     font-size: 2.375rem;
     font-weight: 300;
-    margin-top: 1%;
+    max-width: 400px;
+    margin: 1% auto 0 auto;
   }
+
   .audioplayer-header h5 {
     color: #a7a7a7;
     margin-top: 1%;
@@ -619,6 +621,22 @@ small {
 .playlist-container {
   flex: 1;
 }
+
+@media only screen and (min-width: 420px) {
+   .playlist-container {
+     max-width: 1200px;
+     margin: 0 auto;
+   }
+
+   .audioplayer-container-header {
+     min-height: 400px;
+     margin-bottom: 5em;
+   }
+   .audioplayer-container-header--img {
+     top: 76%;
+   }
+ }
+
 
 
 /* *******************************

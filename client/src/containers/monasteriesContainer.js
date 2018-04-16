@@ -45,7 +45,7 @@ class MonasteryContainer extends Component {
     }
 
     return(
-      <div className="monastery-container ">
+      <div className="monastery-container">
         { this.renderMonasteries() }
       </div>
     )
