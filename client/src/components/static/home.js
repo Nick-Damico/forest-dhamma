@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <main className="wrapper">
       <section className="row intro-section">
-        <div className="col-xs-12 col-md-6">
+        <div className="col-xs-12 col-md-6 intro__col--1">
             <h1 className="intro__title">Dhamma Audio App</h1>
             <p className="intro__text">
               Morbi in sem quis dui placerat ornare.
@@ -14,7 +14,7 @@ const Home = () => {
               diam. Sed arcu. Cras consequat.
             </p>
           </div>
-        <div className="col-xs-12 col-md-6">
+        <div className="col-xs-12 col-md-6 intro__col--2">
           <img className="intro__image" src={require('../../images/circle-app-image@3x.jpg')} alt="" />
         </div>
       </section>
@@ -62,8 +62,8 @@ const Home = () => {
             diam. Sed arcu. Cras consequat.
           </p>
         </div>
-        <div className="col-xs-12 listen__col--2">
-          <img src={require('../../images/upload@2x.png')} alt="" className="share__image"/>
+        <div className="col-xs-12 col-md-6 listen__col--2">
+
         </div>
       </section>
     </main>
