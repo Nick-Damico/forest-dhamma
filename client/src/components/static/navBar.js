@@ -10,7 +10,7 @@ class NavBar extends Component {
             <li><NavLink activeClassName="selected" exact to="/">Home</NavLink></li>
             <li><NavLink activeClassName="selected" to="/monasteries">Talks</NavLink></li>
             <li><NavLink activeClassName="selected" to="/talks/upload">Upload</NavLink></li>
-            <li><NavLink activeClassName="selected" to="/api">API</NavLink></li>
+            
           </ul>
       </nav>
     )
