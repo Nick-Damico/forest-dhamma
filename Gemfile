@@ -26,13 +26,13 @@ gem 'pry'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 0.4.0'
 gem 'active_model_serializers', '~> 0.9.3'
-gem 'foreman', '~> 0.84.0'
 # gem 'devise', '~> 4.4', '>= 4.4.1'
 # gem 'activeadmin', '~> 1.2', '>= 1.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'foreman', '~> 0.84.0'
 end
 
 group :development do
