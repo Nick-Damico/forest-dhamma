@@ -10,7 +10,7 @@ console.log(ROOT_URL);
 export function fetchMonasteries() {
   return (dispatch) => {
     dispatch({type: FETCH_MONASTERIES});
-    fetch(`${DATABASE_URL}/monasteries`)
+    fetch(`/monasteries`)
       .then(response => response.json())
       .then(json => {
         dispatch({type: RECEIVED_MONASTERIES, payload: json.monasteries})
