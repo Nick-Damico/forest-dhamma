@@ -10,7 +10,7 @@ console.log(ROOT_URL);
 export function fetchMonasteries() {
   return (dispatch) => {
     dispatch({type: FETCH_MONASTERIES});
-    fetch(`https://forest-dhamma.herokuapp.com/monasteries`)
+    fetch(`${DATABASE_URL}/monasteries`)
       .then(response => response.json())
       .then(json => {
         dispatch({type: RECEIVED_MONASTERIES, payload: json.monasteries})
@@ -20,7 +20,7 @@ export function fetchMonasteries() {
 
 export function updateMonastery(monastery, numlikes) {
   return (dispatch) => {
-    fetch(`https://forest-dhamma.herokuapp.com/monasteries/${monastery.id}?likes=${numlikes}`, {
+    fetch(`${ROOT_URL}/monasteries/${monastery.id}?likes=${numlikes}`, {
         method: 'PATCH',
         headers: new Headers({
           'Content-Type': 'application/json'
