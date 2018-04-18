@@ -8,7 +8,7 @@ const ROOT_URL = process.env.REACT_APP_API_URL;
 export function fetchTeachers() {
   return (dispatch) => {
     dispatch({ type: FETCH_TEACHERS });
-    fetch(`/teachers`)
+    fetch(`api/teachers`)
       .then(res => res.json())
         .then(json => dispatch({ type: RECEIVED_TEACHERS, payload: json.teachers }))
   }
