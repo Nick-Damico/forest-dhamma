@@ -3,7 +3,7 @@ const ROOT_URL = process.env.REACT_APP_API_URL;
 
 export function uploadTalk(data) {
   return (dispatch) => {
-    fetch('/talks`, {
+    fetch(`/talks`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
