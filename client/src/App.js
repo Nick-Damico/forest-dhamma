@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/monasteries/:monasteryId" component={ TeachersContainer } />
           <Route exact path="/teachers/:teacherId" component={ TalkAudioPlayerContainer } />
           <Route exact path="/talks/upload" component={ UploadTalkContainer } />
-          <Route exact path="/docs" component={ Api } />
+          <Route exact path="/api" component={ Api } />
           <Footer />
         </div>
       </Router>
