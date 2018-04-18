@@ -1,4 +1,4 @@
-class Api::V1::MonasteriesController < ApiController
+class Api::MonasteriesController < ApiController
   before_action :set_monastery, only: [:show, :update]
 
   def index

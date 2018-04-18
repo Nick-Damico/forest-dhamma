@@ -1,4 +1,4 @@
-class Api::V1::TalksController < ApiController
+class Api::TalksController < ApiController
   before_action :set_talk, only: [:show, :update, :destroy]
 
   def index
