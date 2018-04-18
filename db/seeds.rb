@@ -15,7 +15,7 @@ amaravati = Monastery.create(
 abhayagiri = Monastery.create(
   name: 'Abhayagiri',
   address: 'Redwood Valley, CA',
-  site_url: 'http://www.abhayagiri.org/',
+  site_url: 'https://www.abhayagiri.org/',
   img_url: 'https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDgvMjgvNm5kbjlteXA4Z19hYmhheWFnaXJpX3ZpZXdfLmpwZyJdLFsicCIsInRodW1iIiwiNDkweDI1OSMiXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4NSJdXQ/a609da901ccc36c1/abhayagiri%20view%20.jpg'
 )
 
@@ -29,7 +29,7 @@ aruna = Monastery.create(
 bodhinyanarama = Monastery.create(
   name: 'Bodhinyanarama',
   address: 'Wellington, New Zealand',
-  site_url: 'http://www.bodhinyanarama.net.nz/',
+  site_url: 'https://www.bodhinyanarama.net.nz/',
   img_url: 'https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDgvMTIvM3NhamkyazFpM19OWl9XZWxsaW5ndG9uX1N0dXBhLmpwZyJdLFsicCIsInRodW1iIiwiNDkweDI1OSMiXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4NSJdXQ/a5b7484e133a8e4d/NZ_Wellington_Stupa.jpg'
 )
 
@@ -64,8 +64,8 @@ forest_hermitage = Monastery.create(
 hartridge = Monastery.create(
   name: 'Hartridge',
   address: 'United Kingdom',
-  site_url: 'http://www.hartridgemonastery.org/',
-  img_url: 'http://hartridge.weebly.com/uploads/2/1/8/9/21897506/3229942_orig.jpg'
+  site_url: 'https://www.hartridgemonastery.org/',
+  img_url: 'https://hartridge.weebly.com/uploads/2/1/8/9/21897506/3229942_orig.jpg'
 )
 
 santacittarama = Monastery.create(
@@ -85,8 +85,8 @@ wat_nong_pah_pong = Monastery.create(
 wat_pah_nanachat = Monastery.create(
   name: 'Wat Nong Pah Pong',
   address: 'Ubon, Thailand',
-  site_url: 'http://www.watpahnanachat.org/',
-  img_url: 'http://sanitykeeper.com/wp-content/uploads/2017/04/Wat-Pah-Nanachat-aerial-view.jpg'
+  site_url: 'https://www.watpahnanachat.org/',
+  img_url: 'https://sanitykeeper.com/wp-content/uploads/2017/04/Wat-Pah-Nanachat-aerial-view.jpg'
 )
 
 
@@ -99,17 +99,17 @@ wat_pah_nanachat = Monastery.create(
 ############################
 ajahn_karuṇadhammo = Teacher.create(
   name: 'Ajahn Karuṇadhammo',
-  profile_img: 'http://www.abhayagiri.org/media/images/authors/Ajahn%20Karunadhammo-small.jpg',
+  profile_img: 'https://www.abhayagiri.org/media/images/authors/Ajahn%20Karunadhammo-small.jpg',
   monastery: abhayagiri
 )
 ajahn_passano = Teacher.create(
   name: 'Ajahn Pasanno',
-  profile_img: 'http://www.abhayagiri.org/media/images/authors/Ajahn%20Pasanno-small.JPG',
+  profile_img: 'https://www.abhayagiri.org/media/images/authors/Ajahn%20Pasanno-small.JPG',
   monastery: abhayagiri
 )
 ajahn_naniko = Teacher.create(
   name: 'Ajahn Ñāniko',
-  profile_img: 'http://www.abhayagiri.org/media/images/authors/Ajahn%20Nyaniko-small.JPG',
+  profile_img: 'https://www.abhayagiri.org/media/images/authors/Ajahn%20Nyaniko-small.JPG',
   monastery: abhayagiri
 )
 
@@ -163,7 +163,7 @@ ajahn_chandako = Teacher.create(
 
 ajahn_kalyano = Teacher.create(
   name: 'Ajahn Kalyano',
-  profile_img: 'http://www.dhammagiri.org.au/uploads/1/0/9/7/10977520/1609988.png',
+  profile_img: 'https://www.dhammagiri.org.au/uploads/1/0/9/7/10977520/1609988.png',
   monastery: buddhabodhivana
 )
 
@@ -219,7 +219,7 @@ going_beneath = Talk.create(
   title: 'Going Beneath the Thought',
   description: 'Ajahn Karunadhammo discusses instructions on how to remove unwholesome, distracting or proliferating thoughts. He focuses on the fourth method which retraces the thought back to its origin. He suggests moving to the affective experience that is feeding the thought or story, and then to see the bare energetic experience in the body.',
   language: 'English',
-  file_url: 'http://www.abhayagiri.org/media/audio/youtube/P8l6jgpnxxY.mp3',
+  file_url: 'https://www.abhayagiri.org/media/audio/youtube/P8l6jgpnxxY.mp3',
   teacher: ajahn_karuṇadhammo,
   favorites: 11
 )
@@ -231,7 +231,7 @@ connect_lineage =  Talk.create(
   title: 'Connecting with the Lineage',
   description: 'Ajahn Pasanno describes the recent visit to Thailand by members of the community to attend the celebration of the one hundredth year of Ajahn Chah’s birth.',
   language: 'English',
-  file_url: 'http://www.abhayagiri.org/media/audio/youtube/3oi13Xeqeq8.mp3',
+  file_url: 'https://www.abhayagiri.org/media/audio/youtube/3oi13Xeqeq8.mp3',
   teacher: ajahn_passano,
   favorites: 5
 )
@@ -242,7 +242,7 @@ going_against_stream = Talk.create(
   title: 'Are we going against the stream?',
   description: ' He discusses the five hindrances to meditation and their antidotes which are the four protective meditations: contemplation of the body, metta, death, and the Buddha.',
   language: 'English',
-  file_url: 'http://www.abhayagiri.org/media/audio/youtube/7zXgHV9WOfM.mp3',
+  file_url: 'https://www.abhayagiri.org/media/audio/youtube/7zXgHV9WOfM.mp3',
   teacher: ajahn_naniko,
   favorites: 10
 )
@@ -253,7 +253,7 @@ returning_abhayagiri = Talk.create(
   title: 'Returning to Abhayagiri',
   description: 'Returning from his time in Thailand, Ajahn Naniko offers reflections on overcoming negativity, meditating in India, uncertainty, and spiritual friendship.',
   language: 'English',
-  file_url: 'http://www.abhayagiri.org/media/audio/youtube/gDRjNwmhgDU.mp3',
+  file_url: 'https://www.abhayagiri.org/media/audio/youtube/gDRjNwmhgDU.mp3',
   teacher: ajahn_naniko,
   favorites: 2
 )
@@ -349,7 +349,7 @@ life_story.save
 
 inspiration_to_practice = Talk.create(
   title: 'Inspiration to practice',
-  file_url: 'http://vimutti.org.nz/audio/talks/ac/20111030_Bodhinyanarama_Gratitude_for_the_Sangha.mp3',
+  file_url: 'https://vimutti.org.nz/audio/talks/ac/20111030_Bodhinyanarama_Gratitude_for_the_Sangha.mp3',
   language: 'English',
   teacher: ajahn_chandako,
   favorites: 2
