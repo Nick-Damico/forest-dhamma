@@ -10,7 +10,7 @@ console.log(ROOT_URL);
 export function fetchMonasteries() {
   return (dispatch) => {
     dispatch({type: FETCH_MONASTERIES});
-    fetch(`${ROOT_URL}/monasteries`)
+    fetch(`/monasteries`)
       .then(response => response.json())
       .then(json => {
         dispatch({type: RECEIVED_MONASTERIES, payload: json.monasteries})
@@ -20,7 +20,7 @@ export function fetchMonasteries() {
 
 export function updateMonastery(monastery, numlikes) {
   return (dispatch) => {
-    fetch(`${ROOT_URL}/monasteries/${monastery.id}?likes=${numlikes}`, {
+    fetch(`/monasteries/${monastery.id}?likes=${numlikes}`, {
         method: 'PATCH',
         headers: new Headers({
           'Content-Type': 'application/json'
